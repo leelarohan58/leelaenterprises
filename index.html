@@ -563,6 +563,30 @@
 
 <!-- Scripts -->
 <script src="app.js"></script>
+<script>
+  document.getElementById('pricingForm').addEventListener('submit', function(event) {
+    // 1. Stop the page from reloading
+    event.preventDefault(); 
+    
+    // 2. Gather all the data from the fields automatically
+    const formData = new FormData(event.target);
+    const data = Object.fromEntries(formData.entries());
 
+    // 3. Send the data silently to Zapier
+    fetch('https://hooks.zapier.com/hooks/catch/28126363/42vz9cz/', {
+      method: 'POST',
+      body: JSON.stringify(data)
+    })
+    .then(response => {
+      // 4. Show a success message and clear the form
+      alert("Thank you! Your request has been sent to our sales team.");
+      event.target.reset(); 
+    })
+    .catch(error => {
+      console.error('Error sending data:', error);
+      alert("Oops! Something went wrong.");
+    });
+  });
+</script>
 </body>
 </html>
