@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator | Leela Enterprises</title>
+    <meta name="description" content="Interactive calculator for Tally Prime pricing, GST, and enterprise routing for Leela Enterprises." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="topbar">
+        <div class="brand-mark">
+          <div class="brand-badge">LE</div>
+          <div><strong>Leela Enterprises</strong><br /><span>Authorized Tally Prime Partner</span></div>
+        </div>
+        <nav class="nav-links">
+          <a href="/">Home</a>
+          <a href="/solutions.html">Solutions</a>
+          <a href="/calculator.html">Calculator</a>
+          <a href="/resources.html">Resources</a>
+          <a href="/contact.html">Contact</a>
+        </nav>
+      </header>
+
+      <section class="section-block">
+        <div class="calculator-shell">
+          <div class="panel panel-card">
+            <div class="section-header">
+              <div><h3>Interactive quote engine</h3><p>Collect the details and receive a live pricing summary.</p></div>
+            </div>
+            <form id="leadForm">
+              <div class="form-grid">
+                <div><label for="name">Name</label><input id="name" name="name" required placeholder="Your full name" /></div>
+                <div><label for="companyName">Company Name</label><input id="companyName" name="companyName" required placeholder="Business name" /></div>
+                <div><label for="businessEmail">Business Email</label><input id="businessEmail" name="businessEmail" required type="email" placeholder="name@company.com" /></div>
+                <div><label for="phoneNumber">Phone Number</label><input id="phoneNumber" name="phoneNumber" required placeholder="+91 98765 43210" /></div>
+                <div><label for="solutionRequired">Select License Tier</label><select id="solutionRequired" name="solutionRequired"><option value="silver">Tally Prime Silver (Single User)</option><option value="gold">Tally Prime Gold (Multi-User)</option><option value="server">Tally Prime Server</option></select></div>
+                <div><label for="remoteDeployment">Remote Cloud Deployment</label><select id="remoteDeployment" name="remoteDeployment"><option value="false">No</option><option value="true">Yes</option></select></div>
+                <div><label for="locations">Locations</label><input id="locations" name="locations" type="number" min="1" value="1" /></div>
+                <div><label for="concurrentUsers">Concurrent users</label><input id="concurrentUsers" name="concurrentUsers" type="number" min="1" value="1" /></div>
+              </div>
+              <div class="submit-row">
+                <button type="submit">Request my consultation</button>
+                <span style="color:var(--muted); font-size:0.92rem;">Disposable emails and unsafe input are blocked automatically.</span>
+              </div>
+            </form>
+          </div>
+          <div class="panel panel-card">
+            <div class="section-header"><div><h3>Live quote summary</h3><p>Pricing follows the LE-SOP-2026-V1 licensing matrix with strict 18% GST applied.</p></div></div>
+            <div id="quoteOutput" class="quote-card">
+              <h4>Pricing summary</h4>
+              <p style="margin-top:8px; color:var(--muted);">Submit the form to receive a quote and routing summary.</p>
+            </div>
+            <div class="quote-card" style="margin-top:12px;">
+              <h4>Routing notice</h4>
+              <p style="margin:0; color:var(--muted);">Priority 1 routing automatically scales enterprise scenarios such as Tally Prime Server or cloud setups over 10 users. Priority 2 handles standard retail flows.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      <div class="page footer-grid">
+        <div class="footer-card">
+          <h3>Copyright © 2026 Leela Enterprises. All Rights Reserved.</h3>
+          <p>Professional lead handling, verified partner credentials, and AES-256 bit data protection at rest for every customer submission.</p>
+        </div>
+      </div>
+    </footer>
+    <script src="/app.js"></script>
+  </body>
+</html>
