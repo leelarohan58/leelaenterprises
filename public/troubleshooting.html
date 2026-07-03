@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Troubleshooting & Error Resolution | Leela Enterprises</title>
+    <meta name="description"
+        content="TallyPrime troubleshooting guides for data corruption, migrations, LAN performance, and statutory errors. Step-by-step fixes by Leela Enterprises." />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I resolve the TallyPrime error: Data path not found?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Stop active multi-user access, verify your data folder mapping and permissions, restore correct data structure, and run controlled rewrite/repair steps (where applicable). For Tally ERP 9 rewrite workflows, use Ctrl + Alt + R as per your version guidance."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the correct migration sequence from Tally 7.2 / ERP 9 to TallyPrime?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Plan the migration window, stop user sessions during cutover, take verified backups, validate master mappings and GST settings, run migration with sample trial-balance validation, fix broken references, then re-test before re-enabling multi-user access."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How can I improve slow report performance over a LAN?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Check network latency/packet loss, configure required firewall/ports, add antivirus exclusions for .900 data files where appropriate, use a server-first model for multi-user, and ensure storage I/O is not saturated during peak reporting."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I fix statutory errors like invalid HSN/SAC or e-invoicing communication lag?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Validate HSN/SAC parameters and item master mapping, confirm NIC connectivity, retry e-invoicing for a single invoice first, audit invoice payload fields, then reconcile any mismatches with GSTR-1 as needed."
+        }
+      }
+    ]
+  }
+  </script>
+
+    <link rel="stylesheet" href="/styles.css" />
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+    <div
+        class="bg-gradient-to-r from-blue-900 to-blue-800 text-white py-3 sticky top-0 z-50 border-b-2 border-orange-500">
+        <div class="max-w-7xl mx-auto px-4 flex items-center justify-between">
+            <div class="flex gap-6 text-sm font-semibold">
+                <span class="flex items-center gap-2">
+                    <span class="bg-orange-500 px-3 py-1 rounded-full text-xs">CERTIFIED</span>
+                    Tally Solutions Partner (Authorized)
+                </span>
+                <span class="hidden md:flex items-center gap-2">
+                    <span class="bg-green-500 px-3 py-1 rounded-full text-xs">IMPLEMENTATION</span>
+                    Training • Deployment • AMC
+                </span>
+            </div>
+            <div class="flex gap-4 text-sm">
+                <a href="tel:+919595228639" class="flex items-center gap-1 hover:text-orange-400 transition"
+                    aria-label="Call Leela Enterprises">
+                    <span>📞</span> +91 9595228639
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <nav class="bg-white shadow-md sticky top-12 z-40">
+        <div class="max-w-7xl mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex-shrink-0">
+                    <div class="text-2xl font-bold text-blue-900">Leela Enterprises</div>
+                    <div class="text-xs text-orange-600 font-semibold">Sales • Customization • AMC • Implementation
+                    </div>
+                </div>
+
+                <div class="hidden md:flex gap-8 flex-1 justify-center text-sm font-medium">
+                    <a href="/" class="text-gray-700 hover:text-orange-600 transition">Home</a>
+                    <a href="/products.html" class="text-gray-700 hover:text-orange-600 transition">Products</a>
+                    <a href="/tally-on-cloud.html" class="text-gray-700 hover:text-orange-600 transition">Tally on
+                        Cloud</a>
+                    <a href="/troubleshooting.html"
+                        class="text-gray-700 hover:text-orange-600 transition">Troubleshooting</a>
+                    <a href="/pricing.html" class="text-gray-700 hover:text-orange-600 transition">Pricing</a>
+                </div>
+
+                <a href="/pricing.html"
+                    class="bg-orange-600 hover:bg-orange-700 text-white px-6 py-2 rounded-lg font-semibold transition">
+                    Get Quote
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <header class="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white py-14">
+            <div class="max-w-7xl mx-auto px-4">
+                <h1 class="text-4xl md:text-5xl font-bold leading-tight">
+                    TallyPrime Troubleshooting & Error Resolution Guides (Data Corruption, Migrations, LAN Performance,
+                    Statutory Failures)
+                </h1>
+                <p class="text-lg text-blue-100 mt-4 max-w-3xl">
+                    Structured, step-by-step fixes for common TallyPrime issues—designed to help accountants recover
+                    quickly and reduce recurring failures.
+                </p>
+            </div>
+        </header>
+
+        <section class="py-12">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="space-y-8">
+                    <article class="bg-white rounded-2xl border border-gray-200 p-6">
+                        <h2 class="text-2xl font-bold text-blue-900">Data Corruption: “Data path not found” and missing
+                            references</h2>
+                        <p class="text-gray-700 mt-3">
+                            When Tally cannot resolve the data path or internal references, fix the mapping first, then
+                            execute controlled rewrite/repair steps where applicable.
+                        </p>
+                        <div class="mt-5 bg-gray-50 border border-gray-200 rounded-xl p-5">
+                            <h3 class="font-bold text-blue-900">Step-by-step</h3>
+                            <ol class="list-decimal pl-5 space-y-2 mt-3 text-sm text-gray-800">
+                                <li>Stop active multi-user access (especially on Server/Gold) to prevent concurrent
+                                    writes.</li>
+                                <li>Verify server/client data path mapping, folder existence, and permissions.</li>
+                                <li>Check renamed/moved folders or incomplete migrations after storage changes.</li>
+                                <li>If using Tally ERP 9 rewrite/recovery: perform a controlled rewrite using
+                                    <strong>Ctrl + Alt + R</strong>.</li>
+                                <li>Run the TallyPrime/Tally repair utility for your version, then re-test.</li>
+                                <li>Validate by testing a small voucher/report set before full workflows.</li>
+                            </ol>
+                        </div>
+                        <a class="inline-block mt-5 bg-orange-600 hover:bg-orange-700 text-white px-5 py-2 rounded-lg font-semibold transition"
+                            href="/pricing.html?solution=data-repair">Request a Repair Quote</a>
+                    </article>
+
+                    <article class="bg-white rounded-2xl border border-gray-200 p-6">
+                        <h2 class="text-2xl font-bold text-blue-900">Migrations: Upgrading safely from Tally 7.2 / ERP 9
+                            to TallyPrime</h2>
+                        <p class="text-gray-700 mt-3">
+                            Avoid data discrepancies by controlling the migration window and validating masters before
+                            and after cutover.
+                        </p>
+                        <div class="mt-5 bg-gray-50 border border-gray-200 rounded-xl p-5">
+                            <h3 class="font-bold text-blue-900">Migration checklist</h3>
+                            <ul class="list-disc pl-5 space-y-2 mt-3 text-sm text-gray-800">
+                                <li>Plan a migration window and stop user sessions during cutover.</li>
+                                <li>Take verified backups of the latest data directory state.</li>
+                                <li>Validate masters: ledgers/groups, inventory items, GST settings, and price/unit
+                                    discipline.</li>
+                                <li>Run migration with structured validation: compare voucher counts and sample trial
+                                    balances.</li>
+                                <li>Fix broken references before re-enabling multi-user access.</li>
+                                <li>Perform LAN/Server/Cloud performance smoke tests after migration.</li>
+                            </ul>
+                        </div>
+                        <a class="inline-block mt-5 bg-orange-600 hover:bg-orange-700 text-white px-5 py-2 rounded-lg font-semibold transition"
+                            href="/pricing.html?solution=migration">Request a Migration Plan</a>
+                    </article>
+
+                    <article class="bg-white rounded-2xl border border-gray-200 p-6">
+                        <h2 class="text-2xl font-bold text-blue-900">LAN Performance: Optimizing network environments
+                            and server protocols</h2>
+                        <p class="text-gray-700 mt-3">
+                            Improve responsiveness by addressing latency, contention, storage scanning, and antivirus
+                            behavior for data files.
+                        </p>
+                        <div class="mt-5 bg-gray-50 border border-gray-200 rounded-xl p-5">
+                            <h3 class="font-bold text-blue-900">Optimization steps</h3>
+                            <ul class="list-disc pl-5 space-y-2 mt-3 text-sm text-gray-800">
+                                <li>Ensure stable bandwidth; test latency and packet loss between clients and server.
+                                </li>
+                                <li>Configure required firewall rules/ports for your deployment architecture.</li>
+                                <li>Add antivirus exclusions for <strong>.900</strong> data files (where appropriate).
+                                </li>
+                                <li>Use a server-first model for multi-user; avoid direct shared-folder writes.</li>
+                                <li>Review server storage I/O; prevent saturation during peak reports.</li>
+                                <li>Run controlled maintenance with disciplined update schedules and repair utilities.
+                                </li>
+                            </ul>
+                        </div>
+                        <a class="inline-block mt-5 bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-lg font-semibold transition"
+                            href="/pricing.html?solution=performance">Book Performance Audit</a>
+                    </article>
+
+                    <article class="bg-white rounded-2xl border border-gray-200 p-6">
+                        <h2 class="text-2xl font-bold text-blue-900">Statutory Errors: Invalid HSN/SAC, e-invoicing lag,
+                            and GSTR-1 reconciliation</h2>
+                        <p class="text-gray-700 mt-3">
+                            Resolve portal communication failures, fix tax mapping errors, and audit returns using a
+                            controlled correction sequence.
+                        </p>
+                        <div class="mt-5 bg-gray-50 border border-gray-200 rounded-xl p-5">
+                            <h3 class="font-bold text-blue-900">Troubleshooting sequence</h3>
+                            <ol class="list-decimal pl-5 space-y-2 mt-3 text-sm text-gray-800">
+                                <li>Confirm internet/DNS and outbound connectivity from your Tally environment to NIC
+                                    endpoints.</li>
+                                <li>Validate GSTIN, invoice numbering, and date formats used in the e-invoice payload.
+                                </li>
+                                <li>Fix invalid <strong>HSN/SAC</strong> codes and item master mapping—ensure correct
+                                    tax rates and taxability.</li>
+                                <li>Verify IRN generation logs, then retry e-invoicing for a single invoice first.</li>
+                                <li>Check GSTR-1 reconciliation mismatches: verify e-invoice status, return fields, and
+                                    exports.</li>
+                                <li>If errors persist, capture logs and coordinate a structured correction plan.</li>
+                            </ol>
+                        </div>
+                        <a class="inline-block mt-5 bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-lg font-semibold transition"
+                            href="/pricing.html?solution=statutory">Request Compliance Support Quote</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-gray-200 py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between gap-6">
+                <div>
+                    <div class="font-bold text-white text-lg">Leela Enterprises</div>
+                    <p class="text-sm text-gray-400 mt-2">Authorized TallyPrime Partner • Implementation SOPs • Error
+                        resolution support</p>
+                </div>
+                <div class="text-sm text-gray-300">
+                    <p>© 2026 Leela Enterprises. All Rights Reserved.</p>
+                    <div class="mt-2">Pune • India</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

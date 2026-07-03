@@ -1,25 +1,15 @@
-# TODO — Leela Enterprises Tally Partner Portal Overhaul
+# TODO - Leela Enterprises Multi-Page Refactor
 
-## Step 1 — Calculator dynamic pricing matrix
-- [x] Update `/public/app.js` calculator to support `silver|gold|server|cloud|biz|otu|capital`.
-- [x] Implement explicit base + multiplier + AWS overhead pricing.
-- [x] Keep GST fixed at 18%.
-- [x] Verify existing submission automation remains untouched.
-- [x] Run `npm test` (pass).
-
-## Step 2 — Split Pages: Products & Knowledge Base (no messy single page)
-- [ ] Create/expand separate pages for:
-  - Products (catalog)
-  - Knowledge Base (troubleshooting + error guide)
-- [ ] Update navigation dropdown links to point to new pages.
-- [ ] Ensure calculator remains on its own section/page and submit wiring is preserved.
-- [ ] Keep alignment clean + mobile-first.
-
-## Step 3 — SEO + schema refinements
-- [ ] Ensure each page includes correct JSON-LD scoped markup (FAQPage on FAQ section, Product/AggregateOffer on Products page, etc.).
-
-## Step 4 — Final QA
-- [ ] Lighthouse/SEO smoke test.
-- [ ] Manual check: pricing updates when switching solutions.
-- [ ] `npm test` again after page changes.
+## Plan checklist
+- [ ] Create 5 semantic pages in `/public`: `index.html`, `products.html`, `tally-on-cloud.html`, `troubleshooting.html`, `pricing.html`
+- [ ] Ensure each page has exactly one `<h1>` and includes JSON-LD schema in `<head>`
+- [ ] Standardize header/footer nav links across all pages using Tailwind CDN
+- [ ] Preserve `leadForm` automation integrity: keep `id="leadForm"`, required input `name` attributes, and real-time output element IDs
+- [ ] Refactor calculator UI in `pricing.html` to host the preserved form + existing calculator output boxes
+- [ ] Add cross-page routing logic in shared JS: when landing on `pricing.html?solution=...`, auto-select `solutionSelect` and refresh quote
+- [x] Update calculator pricing model for new Option 2 rules (cloud/biz/otu/capital) without breaking silver/gold/server
+- [x] Update dynamic UI rules: hide locations/users/AWS toggle for `biz`, `otu`, `capital`; relabel sliders accordingly
+- [x] Ensure URLs for CTA buttons route correctly to `pricing.html?solution=[product_id]`
+- [x] Update/align schema snippets: `LocalBusiness`/`Organization`, `Product`/`AggregateOffer`, `FAQPage`
+- [x] Run `node --test` and a quick manual smoke test for pricing routing + form submission
 

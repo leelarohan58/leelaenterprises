@@ -4,193 +4,81 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Knowledge Base | Leela Enterprises — TallyPrime Troubleshooting</title>
+    <title>Knowledge Base | Leela Enterprises</title>
     <meta name="description"
-        content="Troubleshooting & Error Resolution Guide for TallyPrime, Tally Server, Tally on Cloud, e-invoicing and e-way bill failures. Step-by-step fixes by Leela Enterprises." />
+        content="TallyPrime and Tally ecosystem knowledge base: troubleshooting guides, error resolution, and step-by-step recovery actions." />
+
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {"@type":"Question","name":"What is the difference between TallyPrime Silver and Gold editions?","acceptedAnswer":{"@type":"Answer","text":"TallyPrime Silver is designed for single-user deployments and streamlined accounting workflows. TallyPrime Gold supports multi-user concurrent usage patterns and typically suits teams that collaborate on accounts and inventory across shared environments."}},
-        {"@type":"Question","name":"How does TallyPrime Server protect data from corruption compared to standard shared folders?","acceptedAnswer":{"@type":"Answer","text":"TallyPrime Server is deployed with enterprise-grade concurrency and controlled access. It avoids common corruption risks that arise from direct file sharing where multiple clients write to the same physical data path. The server model coordinates synchronization so multi-user activity stays consistent."}},
-        {"@type":"Question","name":"Is my data secure when using Tally on Cloud, and who manages backups?","acceptedAnswer":{"@type":"Answer","text":"Tally on Cloud runs on robust infrastructure with automated backup workflows and controlled access. Backup operations are managed by the cloud deployment architecture used for your instance."}},
-        {"@type":"Question","name":"How often does Biz Analyst sync data from my local desktop to my mobile device?","acceptedAnswer":{"@type":"Answer","text":"Sync behavior depends on your integration workflow and synchronization configuration. In typical deployments it is designed for regular near-real-time updates so mobile dashboards remain current while maintaining secure access."}},
-        {"@type":"Question","name":"Can Otu HRMS handle custom salary structures and complex industrial attendance shifts?","acceptedAnswer":{"@type":"Answer","text":"Otu HRMS supports automated payroll processing with configurable rules for statutory compliances and attendance/leave tracking with shift logic to support complex working patterns."}}
-      ]
-    }
-    </script>
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Knowledge Base | Leela Enterprises"
+  }
+  </script>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet" />
     <link rel="stylesheet" href="/styles.css" />
-    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
-    <div class="page">
-        <header class="topbar">
-            <div class="brand-mark">
-                <div class="brand-badge">LE</div>
-                <div>
-                    <strong>Leela Enterprises</strong><br />
-                    <span>Authorized Tally Prime Partner</span>
-                </div>
+<body class="bg-gray-50 text-gray-900">
+    <div
+        class="bg-gradient-to-r from-blue-900 to-blue-800 text-white py-3 sticky top-0 z-50 border-b-2 border-orange-500">
+        <div class="max-w-7xl mx-auto px-4 flex items-center justify-between">
+            <div class="flex gap-6 text-sm font-semibold">
+                <span class="flex items-center gap-2">
+                    <span class="bg-orange-500 px-3 py-1 rounded-full text-xs">CERTIFIED</span>
+                    Tally Solutions Partner (Authorized)
+                </span>
             </div>
+        </div>
+    </div>
 
-            <nav class="nav-links">
-                <a href="/">Home</a>
-                <a href="/products.html">Products</a>
-                <a href="/calculator.html">Calculator</a>
-                <a href="/knowledge.html">Knowledge Base</a>
-                <a href="/resources.html">Resources</a>
-                <a href="/contact.html">Contact</a>
-            </nav>
-        </header>
-
-        <main>
-            <section class="hero">
-                <div>
-                    <span class="eyebrow">Troubleshooting & error resolution</span>
-                    <h1>Fix TallyPrime Issues Fast (Data, Performance, and E-Invoicing)</h1>
-                    <p>
-                        Step-by-step solutions for real-world accountant problems—built for speed, reliability, and
-                        safer
-                        recovery actions.
-                    </p>
-                    <div class="hero-actions">
-                        <a class="btn-primary" href="/calculator.html">Request support via quote</a>
+    <nav class="bg-white shadow-md sticky top-12 z-40">
+        <div class="max-w-7xl mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex-shrink-0">
+                    <div class="text-2xl font-bold text-blue-900">Leela Enterprises</div>
+                    <div class="text-xs text-orange-600 font-semibold">Sales • Customization • AMC • Implementation
                     </div>
                 </div>
 
-                <div class="panel panel-card">
-                    <h3>Safety note</h3>
-                    <p>
-                        Always take verified backups before repair/rewrite actions. For multi-user environments, stop
-                        active
-                        sessions before attempting recovery.
-                    </p>
+                <div class="hidden md:flex gap-8 flex-1 justify-center text-sm font-medium">
+                    <a href="/" class="text-gray-700 hover:text-orange-600 transition">Home</a>
+                    <a href="/products.html" class="text-gray-700 hover:text-orange-600 transition">Products</a>
+                    <a href="/tally-on-cloud.html" class="text-gray-700 hover:text-orange-600 transition">Tally on
+                        Cloud</a>
+                    <a href="/troubleshooting.html"
+                        class="text-gray-700 hover:text-orange-600 transition">Troubleshooting</a>
+                    <a href="/pricing.html" class="text-gray-700 hover:text-orange-600 transition">Pricing</a>
                 </div>
-            </section>
 
-            <section class="section-block">
-                <h2 class="section-title">Error Resolution Guide</h2>
-                <div class="resource-grid">
-                    <article class="resource-card">
-                        <span class="badge">Data corruption & repair</span>
-                        <h3>“Data path not found” / missing data references</h3>
-                        <p>Validate data folder mapping, stop multi-user writes, and run controlled rewrite/repair
-                            utilities as per your version.</p>
-                        <ul>
-                            <li>Stop active users</li>
-                            <li>Verify folder exists + permissions</li>
-                            <li>Run Ctrl + Alt + R rewrite (Tally ERP 9) where applicable</li>
-                            <li>Run repair utility, then re-test</li>
-                        </ul>
-                        <a class="btn-secondary" href="/calculator.html">Request a Repair Quote</a>
-                    </article>
-
-                    <article class="resource-card">
-                        <span class="badge">Migration errors</span>
-                        <h3>Tally 7.2 / Tally ERP 9 → latest TallyPrime</h3>
-                        <p>Prevent cutover loss by validating master mappings, controlling the migration window, and
-                            performing sample trial-balance checks.</p>
-                        <ul>
-                            <li>Plan migration window</li>
-                            <li>Take verified backups</li>
-                            <li>Validate masters & GST settings</li>
-                            <li>Run validation smoke tests</li>
-                        </ul>
-                        <a class="btn-secondary" href="/calculator.html">Request a Migration Plan</a>
-                    </article>
-
-                    <article class="resource-card">
-                        <span class="badge">Performance lag</span>
-                        <h3>Slow reports over LAN</h3>
-                        <p>Fix latency and contention via server-first deployment, AV exclusions for .900, and
-                            disciplined maintenance windows.</p>
-                        <ul>
-                            <li>Test latency and packet loss</li>
-                            <li>Configure required firewall/ports</li>
-                            <li>Add AV exclusions for .900 data files</li>
-                            <li>Use TallyPrime Server for multi-user</li>
-                        </ul>
-                        <a class="btn-secondary" href="/calculator.html">Book Performance Audit</a>
-                    </article>
-
-                    <article class="resource-card">
-                        <span class="badge">Compliance failures</span>
-                        <h3>E-Invoicing & E-Way Bill errors</h3>
-                        <p>Resolve NIC communication errors, fix invalid HSN/SAC, and correct GSTR-1 reconciliation
-                            mismatches.</p>
-                        <ul>
-                            <li>Verify connectivity</li>
-                            <li>Fix HSN/SAC mapping</li>
-                            <li>Validate invoice payload fields</li>
-                            <li>Re-check GSTR-1 reconciliation</li>
-                        </ul>
-                        <a class="btn-secondary" href="/calculator.html">Request Compliance Support Quote</a>
-                    </article>
-                </div>
-            </section>
-
-            <section class="section-block">
-                <h2 class="section-title">FAQs</h2>
-                <div class="faq-grid">
-                    <details class="faq-item">
-                        <summary>What is the difference between TallyPrime Silver and Gold editions?</summary>
-                        <p>TallyPrime Silver is designed for single-user deployments and streamlined accounting
-                            workflows. TallyPrime Gold supports multi-user concurrent usage patterns and typically suits
-                            teams that collaborate on accounts and inventory across shared environments.</p>
-                    </details>
-
-                    <details class="faq-item">
-                        <summary>How does TallyPrime Server protect data from corruption compared to standard shared
-                            folders?</summary>
-                        <p>TallyPrime Server is deployed with enterprise-grade concurrency and controlled access. It
-                            avoids common corruption risks from direct file sharing where multiple clients write to the
-                            same physical data path. The server model coordinates synchronization so multi-user activity
-                            stays consistent.</p>
-                    </details>
-
-                    <details class="faq-item">
-                        <summary>Is my data secure when using Tally on Cloud, and who manages backups?</summary>
-                        <p>Tally on Cloud runs on robust infrastructure with automated backup workflows and controlled
-                            access. Backup operations are managed by the cloud deployment architecture used for your
-                            instance.</p>
-                    </details>
-
-                    <details class="faq-item">
-                        <summary>How often does Biz Analyst sync data from my local desktop to my mobile device?
-                        </summary>
-                        <p>Sync behavior depends on your integration workflow and synchronization configuration. In
-                            typical deployments it is designed for regular near-real-time updates so mobile dashboards
-                            remain current while maintaining secure access.</p>
-                    </details>
-
-                    <details class="faq-item">
-                        <summary>Can Otu HRMS handle custom salary structures and complex industrial attendance shifts?
-                        </summary>
-                        <p>Otu HRMS supports automated payroll processing and configurable rules for statutory
-                            compliances. It manages attendance/leave with shift logic to support complex working
-                            patterns.</p>
-                    </details>
-                </div>
-            </section>
-        </main>
-
-        <footer>
-            <div class="page footer-grid">
-                <div class="footer-card">
-                    <h3>Copyright © 2026 Leela Enterprises. All Rights Reserved.</h3>
-                    <p>Implementation SOPs, verified partner credentials, and secure lead handling.</p>
-                </div>
+                <a href="/pricing.html"
+                    class="bg-orange-600 hover:bg-orange-700 text-white px-6 py-2 rounded-lg font-semibold transition">
+                    Get Quote
+                </a>
             </div>
-        </footer>
-    </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-4 py-12">
+        <h1 class="text-4xl md:text-5xl font-bold leading-tight">TallyPrime Troubleshooting Knowledge Base & Error
+            Resolution Guides</h1>
+        <p class="text-gray-600 mt-4 max-w-3xl">This page acts as a concise redirect-friendly entry point. Use the
+            dedicated troubleshooting hub for full step-by-step guides.</p>
+
+        <div class="mt-8 bg-white border border-gray-200 rounded-2xl p-8">
+            <p class="text-sm text-gray-700">Recommended start:</p>
+            <a class="inline-block mt-3 bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-xl font-semibold transition"
+                href="/troubleshooting.html">Open Troubleshooting & Error Resolution</a>
+        </div>
+    </main>
+
+    <footer class="bg-gray-900 text-gray-200 py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <p class="text-sm">© 2026 Leela Enterprises. All Rights Reserved.</p>
+        </div>
+    </footer>
 </body>
 
 </html>
