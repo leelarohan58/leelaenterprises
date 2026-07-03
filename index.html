@@ -1,592 +1,1227 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leela Enterprises - Authorized Tally Prime Partner & AWS Cloud Hosting</title>
-    <meta name="description" content="Leela Enterprises: Authorized Tally Certified 3-Star Partner delivering Tally Prime licensing, AWS cloud hosting, custom TDL engineering, and enterprise implementation for Indian businesses.">
-    <meta name="keywords" content="Tally Prime Partner, Tally Prime Silver, Tally Prime Gold, Tally Prime Server, AWS Cloud Hosting, Tally Customization, Enterprise Accounting Software, Pune">
-    <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Leela Enterprises | TallyPrime & Tally Server Partner</title>
+  <meta name="description" content="Leela Enterprises is an authorized Tally Solutions Partner in India—TallyPrime Silver/Gold, Tally Server, and Tally on Cloud with quotes, catalogs, and support." />
+  <meta name="keywords" content="Tally partner in India, TallyPrime Silver, TallyPrime Gold, TallyPrime Server pricing, buy Tally on cloud license, Tally server for multi users, Tally data corruption fix, best HRMS for Tally integration, e-invoicing e-way bill TallyPrime troubleshooting, Leela Enterprises Pune" />
+
+  <meta name="robots" content="index,follow" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- SEO: JSON-LD Schemas (FAQPage + Product/AggregateOffer + LocalBusiness/Organization) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "Leela Enterprises",
+        "url": "https://leelaenterprises.co/",
+        "email": "leelaenterprises999@gmail.com",
+        "telephone": "+919595228639",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "2nd Floor, Abbas Chamber, Opp. Hotel Aurora Tower, MG Road, Camp",
+          "addressLocality": "Pune",
+          "postalCode": "411001",
+          "addressCountry": "IN"
+        },
+        "makesOffer": [
+          { "@type": "Offer", "name": "TallyPrime Silver" },
+          { "@type": "Offer", "name": "TallyPrime Gold" },
+          { "@type": "Offer", "name": "TallyPrime Server" },
+          { "@type": "Offer", "name": "Tally on Cloud" },
+          { "@type": "Offer", "name": "Otu HRMS" },
+          { "@type": "Offer", "name": "Tally Capital" }
+        ]
+      },
+      {
+        "@type": "LocalBusiness",
+        "name": "Leela Enterprises",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "2nd Floor, Abbas Chamber, Opp. Hotel Aurora Tower, MG Road, Camp",
+          "addressLocality": "Pune",
+          "postalCode": "411001",
+          "addressCountry": "IN"
+        },
+        "areaServed": ["Pune", "Maharashtra", "India"],
+        "telephone": "+919595228639",
+        "email": "leelaenterprises999@gmail.com",
+        "description": "Authorized Tally Solutions Partner providing TallyPrime licensing, Tally Server deployment, Tally on Cloud hosting, implementation support, and integration services."
+      },
+      {
+        "@type": "AggregateOffer",
+        "name": "TallyPrime Editions",
+        "availability": "https://schema.org/InStock",
+        "priceCurrency": "INR",
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "TallyPrime Silver (Single User)",
+            "price": "22500",
+            "priceCurrency": "INR",
+            "eligibleRegion": {"@type": "Country", "name": "IN"},
+            "category": "Accounting Software"
+          },
+          {
+            "@type": "Offer",
+            "name": "TallyPrime Gold (Multi-User)",
+            "price": "67500",
+            "priceCurrency": "IN",
+            "eligibleRegion": {"@type": "Country", "name": "IN"},
+            "category": "Accounting Software"
+          },
+          {
+            "@type": "Offer",
+            "name": "TallyPrime Server (Enterprise)",
+            "price": "270000",
+            "priceCurrency": "INR",
+            "eligibleRegion": {"@type": "Country", "name": "IN"},
+            "category": "Accounting Software"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is the difference between TallyPrime Silver and Gold editions?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "TallyPrime Silver is designed for single-user deployments and streamlined accounting workflows. TallyPrime Gold supports multi-user concurrent usage patterns and typically suits teams that collaborate on accounts and inventory across desktops and networked environments."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does TallyPrime Server protect data from corruption compared to standard shared folders?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "TallyPrime Server is deployed with enterprise concurrency and controlled access. It avoids common corruption risks that arise from direct file sharing (where multiple clients write to the same physical data path). The server model manages synchronization and locking so multi-user activity stays consistent."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is my data secure when using Tally on Cloud, and who manages backups?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Tally on Cloud is hosted on robust infrastructure with automated backups and controlled access. Backup operations are managed by the cloud deployment architecture used for your instance, ensuring recoverability and reduced risk compared to unmanaged local backups."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How often does Biz Analyst sync data from my local desktop to my mobile device?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Biz Analyst sync behavior depends on the integration workflow and synchronization configuration for your organization. In typical deployments it is designed for regular near-real-time updates so your sales team can view current dashboards on mobile while maintaining secure access."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can Otu HRMS handle custom salary structures and complex industrial attendance shifts?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Otu HRMS supports automated payroll processing and configurable rules for statutory compliances. It is built to manage attendance/leave with shift logic so you can support complex working patterns and map payroll structures that reflect your organization’s requirements."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="/styles.css" />
 </head>
+
 <body class="bg-gray-50 text-gray-800">
 
-<!-- ============================================
-     A. TOP ANNOUNCEMENT BAR (Trust Signals)
-     ============================================ -->
-<div class="bg-gradient-to-r from-blue-900 to-blue-800 text-white py-3 sticky top-0 z-50 border-b-2 border-orange-500">
+  <!-- ============================================
+       A. TOP ANNOUNCEMENT BAR (Trust Signals)
+       ============================================ -->
+  <div class="bg-gradient-to-r from-blue-900 to-blue-800 text-white py-3 sticky top-0 z-50 border-b-2 border-orange-500">
     <div class="max-w-7xl mx-auto px-4 flex items-center justify-between">
-        <div class="flex gap-6 text-sm font-semibold">
-            <span class="flex items-center gap-2">
-                <span class="bg-orange-500 px-3 py-1 rounded-full text-xs">CERTIFIED</span>
-                Tally Certified 3-Star Partner
-            </span>
-            <span class="hidden md:flex items-center gap-2">
-                <span class="bg-green-500 px-3 py-1 rounded-full text-xs">AUTHORIZED</span>
-                Training & Assessment Center
-            </span>
-        </div>
-        <div class="flex gap-4 text-sm">
-            <a href="tel:+919595228639" class="flex items-center gap-1 hover:text-orange-400 transition">
-                <span>📞</span> +91 9595228639
-            </a>
-            <a href="mailto:leelaenterprises999@gmail.com" class="hidden sm:flex items-center gap-1 hover:text-orange-400 transition">
-                <span>✉️</span> Email
-            </a>
-        </div>
+      <div class="flex gap-6 text-sm font-semibold">
+        <span class="flex items-center gap-2">
+          <span class="bg-orange-500 px-3 py-1 rounded-full text-xs">CERTIFIED</span>
+          Tally Solutions Partner (Authorized)
+        </span>
+        <span class="hidden md:flex items-center gap-2">
+          <span class="bg-green-500 px-3 py-1 rounded-full text-xs">IMPLEMENTATION</span>
+          Training • Deployment • AMC
+        </span>
+      </div>
+      <div class="flex gap-4 text-sm">
+        <a href="tel:+919595228639" class="flex items-center gap-1 hover:text-orange-400 transition" aria-label="Call Leela Enterprises">
+          <span>📞</span> +91 9595228639
+        </a>
+        <a href="mailto:leelaenterprises999@gmail.com" class="hidden sm:flex items-center gap-1 hover:text-orange-400 transition" aria-label="Email Leela Enterprises">
+          <span>✉️</span> Email
+        </a>
+      </div>
     </div>
-</div>
+  </div>
 
-<!-- ============================================
-     B. MAIN BRAND NAVIGATION BAR
-     ============================================ -->
-<nav class="bg-white shadow-md sticky top-12 z-40">
+  <!-- ============================================
+       B. MAIN BRAND NAVIGATION BAR
+       ============================================ -->
+  <nav class="bg-white shadow-md sticky top-12 z-40">
     <div class="max-w-7xl mx-auto px-4 py-4">
-        <div class="flex items-center justify-between">
-            <!-- Left: Brand -->
-            <div class="flex-shrink-0">
-                <div class="text-2xl font-bold text-blue-900">Leela Enterprises</div>
-                <div class="text-xs text-orange-600 font-semibold">Sales • Customization • AMC • Implementation</div>
-            </div>
-
-            <!-- Center: Navigation Menu (Desktop) -->
-            <div class="hidden md:flex gap-8 flex-1 justify-center text-sm font-medium">
-                <a href="#home" class="text-gray-700 hover:text-orange-600 transition">Home</a>
-                
-                <!-- Products Dropdown -->
-                <div class="relative group">
-                    <button class="text-gray-700 hover:text-orange-600 transition">Products ▼</button>
-                    <div class="absolute left-0 mt-0 w-48 bg-white shadow-lg rounded-md py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                        <a href="#products" class="block px-4 py-2 hover:bg-orange-50 text-gray-700">Tally Prime Silver & Gold</a>
-                        <a href="#products" class="block px-4 py-2 hover:bg-orange-50 text-gray-700">Tally Prime Server</a>
-                        <a href="#products" class="block px-4 py-2 hover:bg-orange-50 text-gray-700">Tally on AWS Cloud Hosting</a>
-                        <a href="#products" class="block px-4 py-2 hover:bg-orange-50 text-gray-700">Biz Analyst Mobile App</a>
-                    </div>
-                </div>
-
-                <!-- Services Dropdown -->
-                <div class="relative group">
-                    <button class="text-gray-700 hover:text-orange-600 transition">Services ▼</button>
-                    <div class="absolute left-0 mt-0 w-56 bg-white shadow-lg rounded-md py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                        <a href="#services" class="block px-4 py-2 hover:bg-orange-50 text-gray-700">Software Customization & TDLs</a>
-                        <a href="#services" class="block px-4 py-2 hover:bg-orange-50 text-gray-700">Annual Maintenance Contracts (AMC)</a>
-                        <a href="#services" class="block px-4 py-2 hover:bg-orange-50 text-gray-700">Corporate & Executive Training</a>
-                        <a href="#services" class="block px-4 py-2 hover:bg-orange-50 text-gray-700">Professional Account Writing</a>
-                        <a href="#services" class="block px-4 py-2 hover:bg-orange-50 text-gray-700">CCTV Infrastructure Setup</a>
-                    </div>
-                </div>
-
-                <a href="#calculator" class="text-gray-700 hover:text-orange-600 transition">Pricing</a>
-                <a href="#resources" class="text-gray-700 hover:text-orange-600 transition">Resources</a>
-                <a href="#contact" class="text-gray-700 hover:text-orange-600 transition">Contact</a>
-            </div>
-
-            <!-- Right: CTA Button -->
-            <a href="#calculator" class="bg-orange-600 hover:bg-orange-700 text-white px-6 py-2 rounded-lg font-semibold transition">
-                Get Quote
-            </a>
+      <div class="flex items-center justify-between">
+        <div class="flex-shrink-0">
+          <div class="text-2xl font-bold text-blue-900">Leela Enterprises</div>
+          <div class="text-xs text-orange-600 font-semibold">Sales • Customization • AMC • Implementation</div>
         </div>
-    </div>
-</nav>
 
-<!-- ============================================
-     C. HERO PROFILE HERO SECTION
-     ============================================ -->
-<section id="home" class="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white py-16">
-    <div class="max-w-7xl mx-auto px-4">
+        <div class="hidden md:flex gap-8 flex-1 justify-center text-sm font-medium">
+          <a href="#home" class="text-gray-700 hover:text-orange-600 transition">Home</a>
+          <div class="relative group">
+            <button class="text-gray-700 hover:text-orange-600 transition">Products ▼</button>
+            <div class="absolute left-0 mt-0 w-60 bg-white shadow-lg rounded-md py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+              <a href="#products" class="block px-4 py-2 hover:bg-orange-50 text-gray-700">TallyPrime Silver & Gold</a>
+              <a href="#products" class="block px-4 py-2 hover:bg-orange-50 text-gray-700">TallyPrime Server</a>
+              <a href="#products" class="block px-4 py-2 hover:bg-orange-50 text-gray-700">Tally on Cloud</a>
+              <a href="#products" class="block px-4 py-2 hover:bg-orange-50 text-gray-700">Biz Analyst by Tally</a>
+              <a href="#products" class="block px-4 py-2 hover:bg-orange-50 text-gray-700">Otu HRMS</a>
+              <a href="#products" class="block px-4 py-2 hover:bg-orange-50 text-gray-700">Tally Capital</a>
+            </div>
+          </div>
+          <div class="relative group">
+            <button class="text-gray-700 hover:text-orange-600 transition">Knowledge Base ▼</button>
+            <div class="absolute left-0 mt-0 w-72 bg-white shadow-lg rounded-md py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+              <a href="#troubleshooting" class="block px-4 py-2 hover:bg-orange-50 text-gray-700">Troubleshooting & Error Resolution</a>
+              <a href="#faq" class="block px-4 py-2 hover:bg-orange-50 text-gray-700">FAQs</a>
+              <a href="#resources" class="block px-4 py-2 hover:bg-orange-50 text-gray-700">Free resources</a>
+            </div>
+          </div>
+          <a href="#calculator" class="text-gray-700 hover:text-orange-600 transition">Pricing</a>
+          <a href="#contact" class="text-gray-700 hover:text-orange-600 transition">Contact</a>
+        </div>
+
+        <a href="#calculator" class="bg-orange-600 hover:bg-orange-700 text-white px-6 py-2 rounded-lg font-semibold transition">
+          Get Quote
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="home">
+    <!-- ============================================
+         C. HERO SECTION
+         ============================================ -->
+    <section class="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white py-16">
+      <div class="max-w-7xl mx-auto px-4">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <!-- Left Column: Value Statement -->
-            <div>
-                <h1 class="text-5xl font-bold mb-6 leading-tight">
-                    Authorized Tally Solutions & AWS Cloud Hosting For Modern Enterprises
-                </h1>
-                <p class="text-lg text-blue-100 mb-8 leading-relaxed">
-                    Eliminate remote location speed lag. Secure your accounting ledgers with enterprise-grade infrastructure. Deploy systematic custom solutions with our certified implementation discipline.
-                </p>
-                <div class="flex gap-4">
-                    <a href="#calculator" class="bg-orange-600 hover:bg-orange-700 text-white px-8 py-3 rounded-lg font-semibold transition">
-                        Start Quote
-                    </a>
-                    <a href="#contact" class="border-2 border-white text-white hover:bg-white hover:text-blue-900 px-8 py-3 rounded-lg font-semibold transition">
-                        Contact Sales
-                    </a>
-                </div>
+          <div>
+            <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+              Tally Solutions Partner Portal in India—TallyPrime, Server & Cloud, Otu HRMS, Biz Analyst
+            </h1>
+            <p class="text-lg text-blue-100 mb-8 leading-relaxed">
+              Leela Enterprises helps businesses buy Tally on cloud license, deploy TallyPrime Server for multi-user reliability,
+              and integrate complete finance-to-operations workflows—with catalogs, quotes, and troubleshooting guidance.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-3">
+              <a href="#calculator" class="bg-orange-600 hover:bg-orange-700 text-white px-8 py-3 rounded-lg font-semibold transition">
+                Start Quote
+              </a>
+              <a href="#contact" class="border-2 border-white text-white hover:bg-white hover:text-blue-900 px-8 py-3 rounded-lg font-semibold transition text-center">
+                Talk to Sales
+              </a>
             </div>
 
-            <!-- Right Column: Authority Metrics Card -->
-            <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-8 border border-white border-opacity-20">
-                <div class="space-y-8">
-                    <div class="text-center">
-                        <div class="text-5xl font-bold text-orange-400 mb-2">20,000+</div>
-                        <div class="text-lg text-blue-100">Active Businesses Served</div>
-                    </div>
-                    <div class="border-t border-white border-opacity-20 pt-6">
-                        <div class="text-5xl font-bold text-orange-400 mb-2">250+</div>
-                        <div class="text-lg text-blue-100">Cross-Functional Professionals</div>
-                    </div>
-                    <div class="border-t border-white border-opacity-20 pt-6">
-                        <div class="text-3xl font-bold text-green-400">✓ Certified Partner</div>
-                        <div class="text-sm text-blue-100 mt-2">Tally 3-Star Authorized Reseller</div>
-                    </div>
-                </div>
+            <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-5 border border-white border-opacity-20">
+                <div class="text-3xl font-bold text-orange-400">24/7</div>
+                <div class="text-sm text-blue-100 mt-1">AMC Support & Priority Routing</div>
+              </div>
+              <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-5 border border-white border-opacity-20">
+                <div class="text-3xl font-bold text-orange-400">Multi-user</div>
+                <div class="text-sm text-blue-100 mt-1">Server-first reliability</div>
+              </div>
+              <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-5 border border-white border-opacity-20">
+                <div class="text-3xl font-bold text-orange-400">GST</div>
+                <div class="text-sm text-blue-100 mt-1">E-invoicing & compliance readiness</div>
+              </div>
             </div>
+          </div>
+
+          <aside class="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-8 border border-white border-opacity-20">
+            <div class="space-y-8">
+              <div class="text-center">
+                <div class="text-5xl font-bold text-orange-400 mb-2">20,000+</div>
+                <div class="text-lg text-blue-100">Active Businesses Served</div>
+              </div>
+              <div class="border-t border-white border-opacity-20 pt-6">
+                <div class="text-5xl font-bold text-orange-400 mb-2">250+</div>
+                <div class="text-lg text-blue-100">Cross-Functional Professionals</div>
+              </div>
+              <div class="border-t border-white border-opacity-20 pt-6">
+                <div class="text-3xl font-bold text-green-400">✓ Authorized Partner</div>
+                <div class="text-sm text-blue-100 mt-2">TallyPrime certification • Cloud implementation</div>
+              </div>
+            </div>
+          </aside>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<!-- ============================================
-     D. CERTIFIED PRODUCT SPECTRUM CARD GRID
-     ============================================ -->
-<section id="products" class="py-16 bg-gray-100">
-    <div class="max-w-7xl mx-auto px-4">
-        <div class="text-center mb-12">
-            <h2 class="text-4xl font-bold text-blue-900 mb-4">Authorized Tally Prime Licensing</h2>
-            <p class="text-gray-600 text-lg">Enterprise-grade solutions tailored to your business scale</p>
+    <!-- ============================================
+         D. PRODUCT CATALOGS (All core suites)
+         ============================================ -->
+    <section id="products" class="py-16 bg-gray-100">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center mb-10">
+          <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-3">Tally Product Catalog—Built for Accounting Accuracy & Enterprise Scale</h2>
+          <p class="text-gray-600 text-lg">Explore complete specs, architecture notes, and deployment outcomes. Request a catalog/quote below to anchor back to the pricing calculator.</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Silver Tier -->
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition border-t-4 border-blue-400">
-                <div class="bg-gradient-to-r from-blue-50 to-blue-100 px-6 py-8">
-                    <h3 class="text-2xl font-bold text-blue-900">Tally Prime Silver</h3>
-                    <p class="text-gray-600 text-sm mt-2">Single User Edition</p>
-                </div>
-                <div class="px-6 py-8">
-                    <div class="mb-6">
-                        <div class="text-sm text-gray-500">Base Amount</div>
-                        <div class="text-3xl font-bold text-orange-600">₹22,500</div>
-                        <div class="text-xs text-gray-500 mt-1">+ 18% GST = ₹26,550</div>
-                    </div>
-                    <ul class="space-y-3 text-sm text-gray-700 mb-8">
-                        <li class="flex items-start gap-2">
-                            <span class="text-orange-600 font-bold">✓</span>
-                            <span>Single user access</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="text-orange-600 font-bold">✓</span>
-                            <span>Desktop installation</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="text-orange-600 font-bold">✓</span>
-                            <span>Basic accounting modules</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="text-orange-600 font-bold">✓</span>
-                            <span>Annual updates included</span>
-                        </li>
-                    </ul>
-                    <button class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg font-semibold transition">Select Plan</button>
-                </div>
+        <!-- Tabs (interactive, SEO-friendly content below stays crawlable) -->
+        <div class="bg-white rounded-2xl shadow-sm border overflow-hidden">
+          <div class="px-4 py-4 border-b">
+            <div class="flex flex-wrap gap-3" role="tablist" aria-label="Tally product suites">
+              <button type="button" class="tab-btn px-4 py-2 rounded-xl font-semibold text-sm bg-blue-50 text-blue-900 border border-blue-100" data-tab="tallyprime">TallyPrime Silver & Gold</button>
+              <button type="button" class="tab-btn px-4 py-2 rounded-xl font-semibold text-sm bg-blue-50 text-blue-900 border border-blue-100" data-tab="server">TallyPrime Server</button>
+              <button type="button" class="tab-btn px-4 py-2 rounded-xl font-semibold text-sm bg-blue-50 text-blue-900 border border-blue-100" data-tab="cloud">Tally on Cloud (RDP/Virtual Desktops)</button>
+              <button type="button" class="tab-btn px-4 py-2 rounded-xl font-semibold text-sm bg-blue-50 text-blue-900 border border-blue-100" data-tab="biz">Biz Analyst by Tally</button>
+              <button type="button" class="tab-btn px-4 py-2 rounded-xl font-semibold text-sm bg-blue-50 text-blue-900 border border-blue-100" data-tab="otu">Otu HRMS</button>
+              <button type="button" class="tab-btn px-4 py-2 rounded-xl font-semibold text-sm bg-blue-50 text-blue-900 border border-blue-100" data-tab="capital">Tally Capital</button>
             </div>
+          </div>
 
-            <!-- Gold Tier -->
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition border-t-4 border-orange-400 transform md:scale-105">
-                <div class="bg-gradient-to-r from-orange-50 to-orange-100 px-6 py-8">
-                    <div class="inline-block bg-orange-600 text-white text-xs font-bold px-3 py-1 rounded-full mb-3">POPULAR</div>
-                    <h3 class="text-2xl font-bold text-blue-900">Tally Prime Gold</h3>
-                    <p class="text-gray-600 text-sm mt-2">Multi-User Edition</p>
-                </div>
-                <div class="px-6 py-8">
-                    <div class="mb-6">
-                        <div class="text-sm text-gray-500">Base Amount</div>
-                        <div class="text-3xl font-bold text-orange-600">₹67,500</div>
-                        <div class="text-xs text-gray-500 mt-1">+ 18% GST = ₹79,650</div>
-                    </div>
-                    <ul class="space-y-3 text-sm text-gray-700 mb-8">
-                        <li class="flex items-start gap-2">
-                            <span class="text-orange-600 font-bold">✓</span>
-                            <span>Multi-user concurrent access</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="text-orange-600 font-bold">✓</span>
-                            <span>Network deployment ready</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="text-orange-600 font-bold">✓</span>
-                            <span>Advanced reporting modules</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="text-orange-600 font-bold">✓</span>
-                            <span>Priority support included</span>
-                        </li>
-                    </ul>
-                    <button class="w-full bg-orange-600 hover:bg-orange-700 text-white py-2 rounded-lg font-semibold transition">Select Plan</button>
-                </div>
-            </div>
+          <!-- Tab panels are all in the DOM to keep content crawlable -->
+          <div class="p-4 md:p-6">
 
-            <!-- Server Tier -->
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition border-t-4 border-green-600">
-                <div class="bg-gradient-to-r from-green-50 to-green-100 px-6 py-8">
-                    <h3 class="text-2xl font-bold text-blue-900">Tally Prime Server</h3>
-                    <p class="text-gray-600 text-sm mt-2">Enterprise Grade</p>
-                </div>
-                <div class="px-6 py-8">
-                    <div class="mb-6">
-                        <div class="text-sm text-gray-500">Base Amount</div>
-                        <div class="text-3xl font-bold text-orange-600">₹2,70,000</div>
-                        <div class="text-xs text-gray-500 mt-1">+ 18% GST = ₹3,18,600</div>
+            <article id="tab-tallyprime" class="tab-panel" data-panel="tallyprime">
+              <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
+                <div class="lg:col-span-2">
+                  <h3 class="text-2xl font-bold text-blue-900 mb-2">TallyPrime Silver & Gold—Accounting depth with GST compliance</h3>
+                  <p class="text-gray-700 mb-4">
+                    Deploy TallyPrime Silver for single-user accounting workflows or TallyPrime Gold for multi-user environments.
+                    Both editions are designed to deliver reliable ledger processing, inventory discipline, and reporting.
+                  </p>
+
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-blue-50 border border-blue-100 rounded-xl p-4">
+                      <h4 class="font-bold text-blue-900">Core Accounting & Audit Trails</h4>
+                      <ul class="mt-2 space-y-2 text-sm text-gray-800">
+                        <li>• Books of Accounts, journal vouchers & reconciliation workflows</li>
+                        <li>• Role-based workflows and audit trail visibility</li>
+                        <li>• Fast data retrieval for routine voucher & ledger operations</li>
+                      </ul>
                     </div>
-                    <ul class="space-y-3 text-sm text-gray-700 mb-8">
-                        <li class="flex items-start gap-2">
-                            <span class="text-orange-600 font-bold">✓</span>
-                            <span>Unlimited concurrent users</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="text-orange-600 font-bold">✓</span>
-                            <span>Enterprise server deployment</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="text-orange-600 font-bold">✓</span>
-                            <span>Remote access & API integrations</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="text-orange-600 font-bold">✓</span>
-                            <span>24/7 dedicated support</span>
-                        </li>
-                    </ul>
-                    <button class="w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-lg font-semibold transition">Select Plan</button>
+                    <div class="bg-blue-50 border border-blue-100 rounded-xl p-4">
+                      <h4 class="font-bold text-blue-900">Inventory, GST & E-Invoicing readiness</h4>
+                      <ul class="mt-2 space-y-2 text-sm text-gray-800">
+                        <li>• Advanced inventory management with valuation discipline</li>
+                        <li>• GST compliance features for invoices, GSTR-ready outputs</li>
+                        <li>• E-invoicing & e-way bill generation workflows guidance</li>
+                      </ul>
+                    </div>
+                    <div class="bg-blue-50 border border-blue-100 rounded-xl p-4">
+                      <h4 class="font-bold text-blue-900">Multi-currency & Business Reporting</h4>
+                      <ul class="mt-2 space-y-2 text-sm text-gray-800">
+                        <li>• Multi-currency support patterns for global transactions</li>
+                        <li>• Standard reporting for management & compliance</li>
+                        <li>• Export-ready outputs for audits and reconciliations</li>
+                      </ul>
+                    </div>
+                    <div class="bg-blue-50 border border-blue-100 rounded-xl p-4">
+                      <h4 class="font-bold text-blue-900">Deployment Options</h4>
+                      <ul class="mt-2 space-y-2 text-sm text-gray-800">
+                        <li>• Silver: best for single desktop teams</li>
+                        <li>• Gold: best for shared finance teams and concurrent access</li>
+                        <li>• Partner-supported install, updates, and data sanity checks</li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
-            </div>
+
+                <div>
+                  <div class="bg-white border border-blue-100 rounded-xl p-5 shadow-sm">
+                    <div class="inline-flex items-center gap-2 bg-orange-50 text-orange-700 border border-orange-100 px-3 py-1 rounded-full text-xs font-bold">
+                      <span>⭐</span> Recommended for Accounting Core
+                    </div>
+                    <h4 class="text-xl font-bold text-blue-900 mt-3">Request a Catalog / Quote</h4>
+                    <p class="text-sm text-gray-700 mt-2">Get an edition-fit recommendation and TallyPrime Silver/Gold catalog.</p>
+                    <a href="#calculator" class="mt-4 block w-full text-center bg-orange-600 hover:bg-orange-700 text-white px-4 py-3 rounded-lg font-semibold transition">Request a Catalog (Anchor to Pricing Calculator)</a>
+
+                    <div class="mt-5 space-y-3 text-sm">
+                      <div class="flex items-start gap-2"><span class="text-orange-600 font-bold">✓</span><span>Edition comparison for your number of users</span></div>
+                      <div class="flex items-start gap-2"><span class="text-orange-600 font-bold">✓</span><span>GST + inventory configuration checklist</span></div>
+                      <div class="flex items-start gap-2"><span class="text-orange-600 font-bold">✓</span><span>Migration readiness planning</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div class="bg-white rounded-xl border border-gray-200 p-6">
+                  <h4 class="text-lg font-bold text-blue-900">TallyPrime Silver (Single User) — Best for focused rollouts</h4>
+                  <ul class="mt-3 space-y-2 text-sm text-gray-800">
+                    <li>• Desktop installation optimized for single-user voucher workflows</li>
+                    <li>• Core accounting and inventory modules for daily operations</li>
+                    <li>• Standard reporting and update coverage for compliant outputs</li>
+                  </ul>
+                  <div class="mt-4 flex gap-3">
+                    <div class="text-3xl font-bold text-orange-600">₹22,500</div>
+                    <div class="text-sm text-gray-500 pt-1">+ 18% GST</div>
+                  </div>
+                </div>
+                <div class="bg-white rounded-xl border border-gray-200 p-6">
+                  <h4 class="text-lg font-bold text-blue-900">TallyPrime Gold (Multi-User) — Designed for concurrent collaboration</h4>
+                  <ul class="mt-3 space-y-2 text-sm text-gray-800">
+                    <li>• Multi-user concurrent access patterns</li>
+                    <li>• Network deployment ready for shared finance teams</li>
+                    <li>• Enhanced reporting depth for management reviews</li>
+                  </ul>
+                  <div class="mt-4 flex gap-3">
+                    <div class="text-3xl font-bold text-orange-600">₹67,500</div>
+                    <div class="text-sm text-gray-500 pt-1">+ 18% GST</div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article id="tab-server" class="tab-panel hidden" data-panel="server">
+              <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
+                <div class="lg:col-span-2">
+                  <h3 class="text-2xl font-bold text-blue-900 mb-2">TallyPrime Server—Enterprise-grade concurrency for multi-user reliability</h3>
+                  <p class="text-gray-700 mb-4">
+                    Choose TallyPrime Server to eliminate data lag and reduce corruption risks associated with ad-hoc shared folder usage.
+                    Ideal when multiple locations, teams, and concurrent activity require stable performance.
+                  </p>
+
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-blue-50 border border-blue-100 rounded-xl p-4">
+                      <h4 class="font-bold text-blue-900">Concurrency & Data Integrity</h4>
+                      <ul class="mt-2 space-y-2 text-sm text-gray-800">
+                        <li>• Managed access with server-side coordination</li>
+                        <li>• Reduced file contention compared to shared storage</li>
+                        <li>• Controlled synchronization for consistent ledger writes</li>
+                      </ul>
+                    </div>
+                    <div class="bg-blue-50 border border-blue-100 rounded-xl p-4">
+                      <h4 class="font-bold text-blue-900">High-speed Access & Background Processing</h4>
+                      <ul class="mt-2 space-y-2 text-sm text-gray-800">
+                        <li>• Optimized data access for multi-user environments</li>
+                        <li>• Background processing patterns for smoother report generation</li>
+                        <li>• Performance tuning guidance for your LAN and clients</li>
+                      </ul>
+                    </div>
+                    <div class="bg-blue-50 border border-blue-100 rounded-xl p-4">
+                      <h4 class="font-bold text-blue-900">Secure Data Isolation</h4>
+                      <ul class="mt-2 space-y-2 text-sm text-gray-800">
+                        <li>• Deployment model supports controlled data paths</li>
+                        <li>• Access discipline to reduce accidental overwrites</li>
+                        <li>• Role-based admin approaches for operational safety</li>
+                      </ul>
+                    </div>
+                    <div class="bg-blue-50 border border-blue-100 rounded-xl p-4">
+                      <h4 class="font-bold text-blue-900">Scalability for Branches</h4>
+                      <ul class="mt-2 space-y-2 text-sm text-gray-800">
+                        <li>• Multi-location collaboration patterns</li>
+                        <li>• Migration planning with minimal disruption</li>
+                        <li>• Update strategy and maintenance support via AMC</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="bg-white border border-blue-100 rounded-xl p-5 shadow-sm">
+                    <div class="inline-flex items-center gap-2 bg-green-50 text-green-700 border border-green-100 px-3 py-1 rounded-full text-xs font-bold">
+                      <span>🏗️</span> Enterprise Deployment
+                    </div>
+                    <h4 class="text-xl font-bold text-blue-900 mt-3">Request a Catalog / Quote</h4>
+                    <p class="text-sm text-gray-700 mt-2">Get TallyPrime Server pricing & architecture fitment.</p>
+                    <a href="#calculator" class="mt-4 block w-full text-center bg-green-600 hover:bg-green-700 text-white px-4 py-3 rounded-lg font-semibold transition">Request Server Quote (Anchor to Pricing Calculator)</a>
+
+                    <div class="mt-5 space-y-3 text-sm">
+                      <div class="flex items-start gap-2"><span class="text-orange-600 font-bold">✓</span><span>Concurrency guidance for your user count</span></div>
+                      <div class="flex items-start gap-2"><span class="text-orange-600 font-bold">✓</span><span>Performance tuning checklist</span></div>
+                      <div class="flex items-start gap-2"><span class="text-orange-600 font-bold">✓</span><span>Data repair & backup readiness</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div class="bg-white rounded-xl border border-gray-200 p-6">
+                  <h4 class="text-lg font-bold text-blue-900">Enterprise Concurrency Outcome</h4>
+                  <p class="text-sm text-gray-700 mt-2">
+                    When multiple staff work simultaneously, server coordination helps reduce the risk of inconsistent writes and common performance lag.
+                  </p>
+                  <ul class="mt-3 space-y-2 text-sm text-gray-800">
+                    <li>• Eliminates data lag for active multi-user sessions</li>
+                    <li>• Stabilizes report generation throughput</li>
+                    <li>• Supports operational discipline for updates and backups</li>
+                  </ul>
+                </div>
+                <div class="bg-white rounded-xl border border-gray-200 p-6">
+                  <h4 class="text-lg font-bold text-blue-900">TallyPrime Server pricing reference</h4>
+                  <div class="mt-3 flex items-end gap-4">
+                    <div class="text-4xl font-bold text-orange-600">₹2,70,000</div>
+                    <div class="text-sm text-gray-500 pb-1">+ 18% GST</div>
+                  </div>
+                  <p class="text-sm text-gray-700 mt-3">
+                    Final quotes vary by user concurrency, locations, and cloud/RDP needs. Use the calculator to anchor your exact configuration.
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <article id="tab-cloud" class="tab-panel hidden" data-panel="cloud">
+              <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
+                <div class="lg:col-span-2">
+                  <h3 class="text-2xl font-bold text-blue-900 mb-2">Tally on Cloud (Virtual Desktops / RDP)—Anytime, anywhere access</h3>
+                  <p class="text-gray-700 mb-4">
+                    Deploy Tally in a cloud-ready architecture so your teams can work across locations with consistent performance,
+                    automated backups, and device/printer synchronization workflows.
+                  </p>
+
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-blue-50 border border-blue-100 rounded-xl p-4">
+                      <h4 class="font-bold text-blue-900">Remote Access & Synchronization</h4>
+                      <ul class="mt-2 space-y-2 text-sm text-gray-800">
+                        <li>• Browser/RDP access across desktops and teams</li>
+                        <li>• Printer/device synchronization patterns for reporting</li>
+                        <li>• Seamless daily operations without local installation friction</li>
+                      </ul>
+                    </div>
+                    <div class="bg-blue-50 border border-blue-100 rounded-xl p-4">
+                      <h4 class="font-bold text-blue-900">Automated Backups & Recoverability</h4>
+                      <ul class="mt-2 space-y-2 text-sm text-gray-800">
+                        <li>• Cloud backup automation reduces human-error risk</li>
+                        <li>• Faster recovery planning vs unmanaged local backups</li>
+                        <li>• Deployment architecture supports integrity checks</li>
+                      </ul>
+                    </div>
+                    <div class="bg-blue-50 border border-blue-100 rounded-xl p-4">
+                      <h4 class="font-bold text-blue-900">Security & Controlled Access</h4>
+                      <ul class="mt-2 space-y-2 text-sm text-gray-800">
+                        <li>• Role-based access patterns for safer operations</li>
+                        <li>• Encrypted transport and controlled session handling</li>
+                        <li>• Reduced exposure from direct file sharing</li>
+                      </ul>
+                    </div>
+                    <div class="bg-blue-50 border border-blue-100 rounded-xl p-4">
+                      <h4 class="font-bold text-blue-900">High-performance Infrastructure</h4>
+                      <ul class="mt-2 space-y-2 text-sm text-gray-800">
+                        <li>• Stable throughput for multi-user workloads</li>
+                        <li>• Background optimization for smoother reporting</li>
+                        <li>• Support for remote teams and branch operations</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="bg-white border border-blue-100 rounded-xl p-5 shadow-sm">
+                    <div class="inline-flex items-center gap-2 bg-orange-50 text-orange-700 border border-orange-100 px-3 py-1 rounded-full text-xs font-bold">
+                      <span>☁️</span> Cloud-First Operations
+                    </div>
+                    <h4 class="text-xl font-bold text-blue-900 mt-3">Request a Catalog / Quote</h4>
+                    <p class="text-sm text-gray-700 mt-2">Book cloud licensing quote with RDP setup plan.</p>
+                    <a href="#calculator" class="mt-4 block w-full text-center bg-orange-600 hover:bg-orange-700 text-white px-4 py-3 rounded-lg font-semibold transition">Request Cloud Quote (Anchor to Pricing Calculator)</a>
+                    <div class="mt-5 space-y-3 text-sm">
+                      <div class="flex items-start gap-2"><span class="text-orange-600 font-bold">✓</span><span>Anytime access & backup architecture</span></div>
+                      <div class="flex items-start gap-2"><span class="text-orange-600 font-bold">✓</span><span>Printer/device synchronization plan</span></div>
+                      <div class="flex items-start gap-2"><span class="text-orange-600 font-bold">✓</span><span>Security and recovery checklist</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article id="tab-biz" class="tab-panel hidden" data-panel="biz">
+              <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
+                <div class="lg:col-span-2">
+                  <h3 class="text-2xl font-bold text-blue-900 mb-2">Biz Analyst by Tally—Mobile dashboards for sales & business control</h3>
+                  <p class="text-gray-700 mb-4">
+                    Improve visibility for field teams with real-time business dashboards, secure synchronization, and offline-friendly patterns.
+                    Perfect for organizations where sales execution needs faster reporting cycles.
+                  </p>
+
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-blue-50 border border-blue-100 rounded-xl p-4">
+                      <h4 class="font-bold text-blue-900">Real-time Business Dashboards</h4>
+                      <ul class="mt-2 space-y-2 text-sm text-gray-800">
+                        <li>• Outstanding management view and collections insights</li>
+                        <li>• Sales team tracking and performance snapshots</li>
+                        <li>• Secure mobile access for operational accountability</li>
+                      </ul>
+                    </div>
+                    <div class="bg-blue-50 border border-blue-100 rounded-xl p-4">
+                      <h4 class="font-bold text-blue-900">Synchronization & Offline Access</h4>
+                      <ul class="mt-2 space-y-2 text-sm text-gray-800">
+                        <li>• Data sync from desktop to mobile with controlled workflows</li>
+                        <li>• Secure offline access patterns for field execution</li>
+                        <li>• Reduced manual reporting effort via automation</li>
+                      </ul>
+                    </div>
+                    <div class="bg-blue-50 border border-blue-100 rounded-xl p-4">
+                      <h4 class="font-bold text-blue-900">Operational Governance</h4>
+                      <ul class="mt-2 space-y-2 text-sm text-gray-800">
+                        <li>• Audit-oriented visibility aligned with business reporting</li>
+                        <li>• Role separation for better internal controls</li>
+                        <li>• Data integrity checks and deployment readiness planning</li>
+                      </ul>
+                    </div>
+                    <div class="bg-blue-50 border border-blue-100 rounded-xl p-4">
+                      <h4 class="font-bold text-blue-900">Use Cases</h4>
+                      <ul class="mt-2 space-y-2 text-sm text-gray-800">
+                        <li>• Multi-branch retail sales and distributor workflows</li>
+                        <li>• Manufacturing sales visits and follow-up tracking</li>
+                        <li>• Collections management and outstanding follow-up</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="bg-white border border-blue-100 rounded-xl p-5 shadow-sm">
+                    <div class="inline-flex items-center gap-2 bg-green-50 text-green-700 border border-green-100 px-3 py-1 rounded-full text-xs font-bold">
+                      <span>📱</span> Mobile Intelligence
+                    </div>
+                    <h4 class="text-xl font-bold text-blue-900 mt-3">Request a Catalog / Quote</h4>
+                    <p class="text-sm text-gray-700 mt-2">Get Biz Analyst deployment plan and synchronization fitment.</p>
+                    <a href="#calculator" class="mt-4 block w-full text-center bg-green-600 hover:bg-green-700 text-white px-4 py-3 rounded-lg font-semibold transition">Request Mobile Integration Quote (Anchor to Pricing Calculator)</a>
+                    <div class="mt-5 space-y-3 text-sm">
+                      <div class="flex items-start gap-2"><span class="text-orange-600 font-bold">✓</span><span>Dashboard mapping for your business metrics</span></div>
+                      <div class="flex items-start gap-2"><span class="text-orange-600 font-bold">✓</span><span>Sales team tracking rollout checklist</span></div>
+                      <div class="flex items-start gap-2"><span class="text-orange-600 font-bold">✓</span><span>Sync and security configuration guidance</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article id="tab-otu" class="tab-panel hidden" data-panel="otu">
+              <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
+                <div class="lg:col-span-2">
+                  <h3 class="text-2xl font-bold text-blue-900 mb-2">Otu HRMS—Automated payroll, statutory compliance & attendance control</h3>
+                  <p class="text-gray-700 mb-4">
+                    Otu HRMS brings automation to payroll processing, attendance/leave workflows, and employee self-service.
+                    Built to integrate with accounting modules so payroll accounting becomes more consistent.
+                  </p>
+
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-blue-50 border border-blue-100 rounded-xl p-4">
+                      <h4 class="font-bold text-blue-900">Automated Payroll Processing</h4>
+                      <ul class="mt-2 space-y-2 text-sm text-gray-800">
+                        <li>• Salary calculation automation with configurable structures</li>
+                        <li>• Attendance-driven components and leave handling logic</li>
+                        <li>• Export and reconciliation workflows aligned with accounting</li>
+                      </ul>
+                    </div>
+                    <div class="bg-blue-50 border border-blue-100 rounded-xl p-4">
+                      <h4 class="font-bold text-blue-900">Statutory Compliances</h4>
+                      <ul class="mt-2 space-y-2 text-sm text-gray-800">
+                        <li>• PF, ESIC, PT, TDS processing support</li>
+                        <li>• Audit-friendly compliance reports and payroll periods</li>
+                        <li>• Structured settings for organization-specific rules</li>
+                      </ul>
+                    </div>
+                    <div class="bg-blue-50 border border-blue-100 rounded-xl p-4">
+                      <h4 class="font-bold text-blue-900">Employee Self-Service</h4>
+                      <ul class="mt-2 space-y-2 text-sm text-gray-800">
+                        <li>• Access to payslips, attendance, and leave requests</li>
+                        <li>• Improved HR responsiveness and reduced manual follow-ups</li>
+                        <li>• Role controls for better security</li>
+                      </ul>
+                    </div>
+                    <div class="bg-blue-50 border border-blue-100 rounded-xl p-4">
+                      <h4 class="font-bold text-blue-900">Attendance, Leave & Shift Complexity</h4>
+                      <ul class="mt-2 space-y-2 text-sm text-gray-800">
+                        <li>• Attendance/leave tracking with shift logic</li>
+                        <li>• Support for complex industrial attendance requirements</li>
+                        <li>• Integration-ready outputs for accounting alignment</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="bg-white border border-blue-100 rounded-xl p-5 shadow-sm">
+                    <div class="inline-flex items-center gap-2 bg-orange-50 text-orange-700 border border-orange-100 px-3 py-1 rounded-full text-xs font-bold">
+                      <span>🧑‍💼</span> HR Automation
+                    </div>
+                    <h4 class="text-xl font-bold text-blue-900 mt-3">Request a Catalog / Quote</h4>
+                    <p class="text-sm text-gray-700 mt-2">Get Otu HRMS integration plan with Tally accounting modules.</p>
+                    <a href="#calculator" class="mt-4 block w-full text-center bg-orange-600 hover:bg-orange-700 text-white px-4 py-3 rounded-lg font-semibold transition">Request HRMS Quote (Anchor to Pricing Calculator)</a>
+                    <div class="mt-5 space-y-3 text-sm">
+                      <div class="flex items-start gap-2"><span class="text-orange-600 font-bold">✓</span><span>Payroll structure mapping</span></div>
+                      <div class="flex items-start gap-2"><span class="text-orange-600 font-bold">✓</span><span>Attendance/leave & shift workflow design</span></div>
+                      <div class="flex items-start gap-2"><span class="text-orange-600 font-bold">✓</span><span>Statutory compliance checklist</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article id="tab-capital" class="tab-panel hidden" data-panel="capital">
+              <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
+                <div class="lg:col-span-2">
+                  <h3 class="text-2xl font-bold text-blue-900 mb-2">Tally Capital—Unsecured business loans & working capital support</h3>
+                  <p class="text-gray-700 mb-4">
+                    Tally Capital helps MSMEs with working capital solutions using accounting data signals.
+                    We assist with documentation readiness and eligibility assessment workflows.
+                  </p>
+
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-blue-50 border border-blue-100 rounded-xl p-4">
+                      <h4 class="font-bold text-blue-900">Unsecured Credit Facilities</h4>
+                      <ul class="mt-2 space-y-2 text-sm text-gray-800">
+                        <li>• Loan/credit facility enablement for eligible MSMEs</li>
+                        <li>• Quick documentation pathways with partner guidance</li>
+                        <li>• Finance readiness assessment based on accounting patterns</li>
+                      </ul>
+                    </div>
+                    <div class="bg-blue-50 border border-blue-100 rounded-xl p-4">
+                      <h4 class="font-bold text-blue-900">Working Capital & Growth Support</h4>
+                      <ul class="mt-2 space-y-2 text-sm text-gray-800">
+                        <li>• Support for inventory cycles and operational continuity</li>
+                        <li>• Data-driven eligibility evaluation workflow</li>
+                        <li>• Reduced manual back-and-forth for finance teams</li>
+                      </ul>
+                    </div>
+                    <div class="bg-blue-50 border border-blue-100 rounded-xl p-4">
+                      <h4 class="font-bold text-blue-900">Automated Financial Health Assessment</h4>
+                      <ul class="mt-2 space-y-2 text-sm text-gray-800">
+                        <li>• Uses accounting data insights to assess credit readiness</li>
+                        <li>• Faster turnaround and structured documentation checklist</li>
+                        <li>• Clear next steps for applicants</li>
+                      </ul>
+                    </div>
+                    <div class="bg-blue-50 border border-blue-100 rounded-xl p-4">
+                      <h4 class="font-bold text-blue-900">Partner Assistance</h4>
+                      <ul class="mt-2 space-y-2 text-sm text-gray-800">
+                        <li>• Documentation readiness review</li>
+                        <li>• Integration readiness alignment with accounting modules</li>
+                        <li>• Support for rollout coordination</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="bg-white border border-blue-100 rounded-xl p-5 shadow-sm">
+                    <div class="inline-flex items-center gap-2 bg-green-50 text-green-700 border border-green-100 px-3 py-1 rounded-full text-xs font-bold">
+                      <span>💳</span> Growth Enablement
+                    </div>
+                    <h4 class="text-xl font-bold text-blue-900 mt-3">Request a Catalog / Quote</h4>
+                    <p class="text-sm text-gray-700 mt-2">Start the Tally Capital readiness assessment inquiry.</p>
+                    <a href="#calculator" class="mt-4 block w-full text-center bg-green-600 hover:bg-green-700 text-white px-4 py-3 rounded-lg font-semibold transition">Request Capital Inquiry (Anchor to Pricing Calculator)</a>
+                    <div class="mt-5 space-y-3 text-sm">
+                      <div class="flex items-start gap-2"><span class="text-orange-600 font-bold">✓</span><span>Accounting-data readiness checklist</span></div>
+                      <div class="flex items-start gap-2"><span class="text-orange-600 font-bold">✓</span><span>Documentation guidance to reduce delays</span></div>
+                      <div class="flex items-start gap-2"><span class="text-orange-600 font-bold">✓</span><span>Eligibility workflow support</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+          </div>
         </div>
-    </div>
-</section>
 
-<!-- ============================================
-     E. EXTENDED CAPABILITIES & SERVICES
-     ============================================ -->
-<section id="services" class="py-16 bg-white">
-    <div class="max-w-7xl mx-auto px-4">
-        <div class="text-center mb-12">
-            <h2 class="text-4xl font-bold text-blue-900 mb-4">Core Technical Services</h2>
-            <p class="text-gray-600 text-lg">Comprehensive solution delivery across enterprise domains</p>
+        <!-- Additional feature-rich cards (maintains premium UX) -->
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="bg-white rounded-2xl border border-gray-200 p-6">
+            <div class="text-2xl">⚙️</div>
+            <h3 class="text-lg font-bold text-blue-900 mt-3">TDL & Workflow Engineering</h3>
+            <p class="text-sm text-gray-700 mt-2">Automate reports, approvals, and industry workflows with Tally Definition Language patterns.</p>
+          </div>
+          <div class="bg-white rounded-2xl border border-gray-200 p-6">
+            <div class="text-2xl">🛡️</div>
+            <h3 class="text-lg font-bold text-blue-900 mt-3">AMC, Security & Compliance</h3>
+            <p class="text-sm text-gray-700 mt-2">Proactive maintenance, backup discipline, and compliance-ready support for GST & e-invoicing.</p>
+          </div>
+          <div class="bg-white rounded-2xl border border-gray-200 p-6">
+            <div class="text-2xl">📚</div>
+            <h3 class="text-lg font-bold text-blue-900 mt-3">Training & Implementation SOPs</h3>
+            <p class="text-sm text-gray-700 mt-2">Structured SOP delivery—so accountants and admins roll out quickly with fewer errors.</p>
+          </div>
         </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         E. TROUBLESHOOTING & ERROR RESOLUTION GUIDE
+         ============================================ -->
+    <section id="troubleshooting" class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4">
+        <header class="text-center mb-10">
+          <h2 class="text-3xl md:text-4xl font-bold text-blue-900">Troubleshooting & Error Resolution Guide (TallyPrime / Server / Cloud / E-Invoicing)</h2>
+          <p class="text-gray-600 text-lg mt-3">Step-by-step solutions for the issues accountants face daily—built as a fast reference knowledge hub.</p>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <article class="bg-gray-50 rounded-2xl border border-gray-200 p-6">
+            <h3 class="text-xl font-bold text-blue-900">Data Corruption & Repair: “Data path not found” / missing data references</h3>
+            <p class="text-sm text-gray-700 mt-2">When Tally cannot resolve the data path, you need to validate folder mapping, restore the correct data structure, and run repair where applicable.</p>
+            <div class="mt-4 space-y-3 text-sm text-gray-800">
+              <div class="font-semibold">Step-by-step</div>
+              <ol class="list-decimal pl-5 space-y-2">
+                <li>Stop active multi-user access (especially if using Server/Gold in a network) to prevent concurrent writes.</li>
+                <li>Verify your data path mapping on the server/client. Confirm the data folder exists and permissions are correct.</li>
+                <li>Check for renamed/moved folders or incomplete migrations (common after storage changes or disk formatting).</li>
+                <li>If your setup uses Tally ERP 9 rewrite/recovery workflows, perform a controlled rewrite using the standard recovery shortcut: <strong>Ctrl + Alt + R</strong> (Tally ERP 9).</li>
+                <li>After rewrite, run the <strong>TallyPrime/Tally repair utility</strong> (as per your version) to rebuild internal references safely.</li>
+                <li>Re-test a small voucher/report set first, then expand to full workflow.</li>
+              </ol>
+              <p class="text-xs text-gray-500">Partner note: keep backups before repair actions. If you use antivirus on endpoints, ensure it does not block/scan .900 data files during operation.</p>
+            </div>
+            <a href="#calculator" class="mt-5 inline-block bg-orange-600 hover:bg-orange-700 text-white px-4 py-2 rounded-lg font-semibold transition">Request a Repair/Recovery Quote</a>
+          </article>
+
+          <article class="bg-gray-50 rounded-2xl border border-gray-200 p-6">
+            <h3 class="text-xl font-bold text-blue-900">Migration Errors: Tally 7.2 / Tally ERP 9 → latest TallyPrime (without data loss)</h3>
+            <p class="text-sm text-gray-700 mt-2">Migrating correctly depends on controlling the data transformation and validating configuration mapping before full cutover.</p>
+            <div class="mt-4 space-y-3 text-sm text-gray-800">
+              <div class="font-semibold">Migration checklist</div>
+              <ul class="list-disc pl-5 space-y-2">
+                <li>Plan the migration window and stop user sessions that might write vouchers during cutover.</li>
+                <li>Take verified backups of existing data directories (including the latest data state).</li>
+                <li>Validate master mappings (ledger/group structure, inventory items, GST settings, price/units discipline).</li>
+                <li>Run migration with structured validation: compare voucher counts and sample trial balances post-migration.</li>
+                <li>Address broken references (missing groups/items) before re-enabling multi-user access.</li>
+                <li>Perform performance smoke tests on LAN/Server/Cloud to ensure no lag issues after migration.</li>
+              </ul>
+              <p class="text-xs text-gray-500">Partner note: keep e-invoicing/e-way bill configurations consistent and re-verify NIC/portal integration endpoints.</p>
+            </div>
+            <a href="#calculator" class="mt-5 inline-block bg-orange-600 hover:bg-orange-700 text-white px-4 py-2 rounded-lg font-semibold transition">Request a Migration Plan</a>
+          </article>
+
+          <article class="bg-gray-50 rounded-2xl border border-gray-200 p-6">
+            <h3 class="text-xl font-bold text-blue-900">Performance Lag over LAN: Faster data access for multi-user environments</h3>
+            <p class="text-sm text-gray-700 mt-2">Lag often comes from network latency, endpoint contention, storage scanning, or incorrect server protocol settings.</p>
+            <div class="mt-4 space-y-3 text-sm text-gray-800">
+              <div class="font-semibold">Optimization steps</div>
+              <ul class="list-disc pl-5 space-y-2">
+                <li>Ensure stable bandwidth and minimize packet loss; test latency between clients and server.</li>
+                <li>Configure firewall rules to allow required Tally services/ports (per your deployment architecture).</li>
+                <li>Add antivirus exclusions for <strong>.900</strong> data files and data directories (where appropriate).</li>
+                <li>Use a server-first model for multi-user; avoid direct shared folder writes for live data.</li>
+                <li>Review server storage I/O and ensure the data volume is not saturated during peak reports.</li>
+                <li>Run controlled maintenance: repair utilities, cleanup tasks, and disciplined update schedules.</li>
+              </ul>
+            </div>
+            <a href="#calculator" class="mt-5 inline-block bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg font-semibold transition">Book Performance Audit</a>
+          </article>
+
+          <article class="bg-gray-50 rounded-2xl border border-gray-200 p-6">
+            <h3 class="text-xl font-bold text-blue-900">E-Invoicing & E-Way Bill Failures: NIC communication, HSN/SAC, and GSTR-1 reconciliation</h3>
+            <p class="text-sm text-gray-700 mt-2">Most failures trace back to portal connectivity, invalid item codes, or mismatched invoice payload fields.</p>
+            <div class="mt-4 space-y-3 text-sm text-gray-800">
+              <div class="font-semibold">Troubleshooting sequence</div>
+              <ol class="list-decimal pl-5 space-y-2">
+                <li>Confirm internet/DNS and ensure outbound communication from your Tally environment to NIC endpoints.</li>
+                <li>Validate GSTIN, invoice numbering, and date formats used in the e-invoice payload.</li>
+                <li>Fix invalid <strong>HSN/SAC</strong> codes and item master mapping—ensure correct tax rates and taxability.</li>
+                <li>Verify IRN generation logs, then re-attempt e-invoicing for a single invoice first.</li>
+                <li>Check GSTR-1 reconciliation mismatches: verify e-invoice status, return fields, and invoice exports.</li>
+                <li>If errors persist, capture error logs and coordinate a structured correction plan with your partner team.</li>
+              </ol>
+            </div>
+            <a href="#calculator" class="mt-5 inline-block bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg font-semibold transition">Request Compliance Support Quote</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         F. SERVICES (premium cards)
+         ============================================ -->
+    <section id="services" class="py-16 bg-gray-100">
+      <div class="max-w-7xl mx-auto px-4">
+        <header class="text-center mb-10">
+          <h2 class="text-3xl md:text-4xl font-bold text-blue-900">Implementation Services for Tally Ecosystems</h2>
+          <p class="text-gray-600 text-lg mt-3">From installation to integrations, Leela Enterprises delivers outcomes that reduce errors and speed up reporting.</p>
+        </header>
 
         <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
-            <!-- Service 1: Custom TDL -->
-            <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-8 border-l-4 border-orange-600">
-                <div class="text-3xl mb-3">⚙️</div>
-                <h3 class="text-lg font-bold text-blue-900 mb-3">Custom TDL Engineering</h3>
-                <p class="text-sm text-gray-700">Invoicing, approvals, and specialized report development using Tally Definition Language.</p>
-            </div>
-
-            <!-- Service 2: AMC -->
-            <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-8 border-l-4 border-orange-600">
-                <div class="text-3xl mb-3">🛡️</div>
-                <h3 class="text-lg font-bold text-blue-900 mb-3">Annual Maintenance (AMC)</h3>
-                <p class="text-sm text-gray-700">24/7 helpdesk support, proactive maintenance, and guaranteed system uptime.</p>
-            </div>
-
-            <!-- Service 3: Training -->
-            <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-8 border-l-4 border-orange-600">
-                <div class="text-3xl mb-3">📚</div>
-                <h3 class="text-lg font-bold text-blue-900 mb-3">Tally Education Center</h3>
-                <p class="text-sm text-gray-700">Certified training programs for end-users, accountants, and system administrators.</p>
-            </div>
-
-            <!-- Service 4: Account Writing -->
-            <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-8 border-l-4 border-orange-600">
-                <div class="text-3xl mb-3">📊</div>
-                <h3 class="text-lg font-bold text-blue-900 mb-3">Account Writing Services</h3>
-                <p class="text-sm text-gray-700">Professional journal entry preparation and ledger reconciliation support.</p>
-            </div>
-
-            <!-- Service 5: CCTV -->
-            <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-8 border-l-4 border-orange-600">
-                <div class="text-3xl mb-3">📹</div>
-                <h3 class="text-lg font-bold text-blue-900 mb-3">CCTV Infrastructure</h3>
-                <p class="text-sm text-gray-700">Complete camera setup and integration with Tally audit trail systems.</p>
-            </div>
+          <div class="bg-white rounded-2xl border border-gray-200 p-6">
+            <div class="text-3xl mb-3">⚙️</div>
+            <h3 class="text-lg font-bold text-blue-900">Custom TDL Engineering</h3>
+            <p class="text-sm text-gray-700 mt-2">Automate invoicing, approvals, and industry reports with TDL patterns.</p>
+          </div>
+          <div class="bg-white rounded-2xl border border-gray-200 p-6">
+            <div class="text-3xl mb-3">🛡️</div>
+            <h3 class="text-lg font-bold text-blue-900">Annual Maintenance (AMC)</h3>
+            <p class="text-sm text-gray-700 mt-2">24/7 helpdesk, proactive maintenance, and reliability improvements.</p>
+          </div>
+          <div class="bg-white rounded-2xl border border-gray-200 p-6">
+            <div class="text-3xl mb-3">📚</div>
+            <h3 class="text-lg font-bold text-blue-900">Training & Assessments</h3>
+            <p class="text-sm text-gray-700 mt-2">Certified training for accountants, admins, and system owners.</p>
+          </div>
+          <div class="bg-white rounded-2xl border border-gray-200 p-6">
+            <div class="text-3xl mb-3">📊</div>
+            <h3 class="text-lg font-bold text-blue-900">Account Writing Services</h3>
+            <p class="text-sm text-gray-700 mt-2">Professional bookkeeping support for accuracy and control.</p>
+          </div>
+          <div class="bg-white rounded-2xl border border-gray-200 p-6">
+            <div class="text-3xl mb-3">📹</div>
+            <h3 class="text-lg font-bold text-blue-900">CCTV Infrastructure Support</h3>
+            <p class="text-sm text-gray-700 mt-2">Infrastructure setup aligned with audit-friendly compliance workflows.</p>
+          </div>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<!-- ============================================
-     F. DYNAMIC INTAKE FORM & REAL-TIME CALCULATOR
-     ============================================ -->
-<section id="calculator" class="py-16 bg-gray-100">
-    <div class="max-w-7xl mx-auto px-4">
+    <!-- ============================================
+         G. DYNAMIC INTAKE FORM & REAL-TIME CALCULATOR
+         CRITICAL: Keep IDs & form internals used by existing automation intact.
+         ============================================ -->
+    <section id="calculator" class="py-16 bg-gray-100">
+      <div class="max-w-7xl mx-auto px-4">
         <div class="text-center mb-12">
-            <h2 class="text-4xl font-bold text-blue-900 mb-4">Investment Estimation Engine</h2>
-            <p class="text-gray-600 text-lg">Configure your solution and see pricing instantly</p>
+          <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Investment Estimation Engine</h2>
+          <p class="text-gray-600 text-lg">Configure your solution and see pricing instantly (calculator output anchors to the same submission flow).</p>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <!-- Left Column: Form -->
-            <div class="bg-white rounded-xl shadow-lg p-8">
-                <h3 class="text-2xl font-bold text-blue-900 mb-6">Your Configuration</h3>
-                <form id="leadForm" class="space-y-5">
-                    <!-- Name -->
-                    <div>
-                        <label class="block text-sm font-semibold text-gray-700 mb-2">Full Name *</label>
-                        <input type="text" name="name" placeholder="e.g., Rajesh Kumar" required
-                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition">
-                    </div>
+          <!-- Left Column: Form -->
+          <div class="bg-white rounded-xl shadow-lg p-8">
+            <h3 class="text-2xl font-bold text-blue-900 mb-6">Your Configuration</h3>
+            <form id="leadForm" class="space-y-5">
+              <!-- Name -->
+              <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-2">Full Name *</label>
+                <input type="text" name="name" placeholder="e.g., Rajesh Kumar" required
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition" />
+              </div>
 
-                    <!-- Company Name -->
-                    <div>
-                        <label class="block text-sm font-semibold text-gray-700 mb-2">Company Name *</label>
-                        <input type="text" name="companyName" placeholder="e.g., ABC Trading Pvt Ltd" required
-                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition">
-                    </div>
+              <!-- Company Name -->
+              <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-2">Company Name *</label>
+                <input type="text" name="companyName" placeholder="e.g., ABC Trading Pvt Ltd" required
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition" />
+              </div>
 
-                    <!-- Business Email -->
-                    <div>
-                        <label class="block text-sm font-semibold text-gray-700 mb-2">Corporate Email *</label>
-                        <input type="email" name="businessEmail" placeholder="e.g., contact@company.com" required
-                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition">
-                        <p class="text-xs text-gray-500 mt-1">Please use your official business email address</p>
-                    </div>
+              <!-- Business Email -->
+              <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-2">Corporate Email *</label>
+                <input type="email" name="businessEmail" placeholder="e.g., contact@company.com" required
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition" />
+                <p class="text-xs text-gray-500 mt-1">Please use your official business email address</p>
+              </div>
 
-                    <!-- Phone Number -->
-                    <div>
-                        <label class="block text-sm font-semibold text-gray-700 mb-2">Mobile Contact *</label>
-                        <input type="tel" name="phoneNumber" placeholder="e.g., +91 98765 43210" required
-                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition">
-                    </div>
+              <!-- Phone Number -->
+              <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-2">Mobile Contact *</label>
+                <input type="tel" name="phoneNumber" placeholder="e.g., +91 98765 43210" required
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition" />
+              </div>
 
-                    <!-- Solution Selection -->
-                    <div>
-                        <label class="block text-sm font-semibold text-gray-700 mb-2">Licensing Framework *</label>
-                        <select name="solutionRequired" id="solutionSelect" required
-                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition">
-                            <option value="silver">Tally Prime Silver (Single User)</option>
-                            <option value="gold">Tally Prime Gold (Multi-User)</option>
-                            <option value="server">Tally Prime Server (Enterprise)</option>
-                        </select>
-                    </div>
+              <!-- Solution Selection -->
+              <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-2">Licensing Framework *</label>
+                <select name="solutionRequired" id="solutionSelect" required
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition">
+                  <option value="silver">Tally Prime Silver (Single User)</option>
+                  <option value="gold">Tally Prime Gold (Multi-User)</option>
+                  <option value="server">Tally Prime Server (Enterprise)</option>
+                </select>
+              </div>
 
-                    <!-- Locations -->
-                    <div>
-                        <label class="block text-sm font-semibold text-gray-700 mb-2">Number of Locations: <span id="locLabel">1</span></label>
-                        <input type="range" name="locations" id="locationsSlider" min="1" max="50" value="1"
-                            class="w-full h-2 bg-gray-300 rounded-lg appearance-none cursor-pointer accent-orange-600">
-                        <div class="flex justify-between text-xs text-gray-500 mt-1">
-                            <span>1 Location</span>
-                            <span>50+ Locations</span>
-                        </div>
-                    </div>
+              <!-- AWS Users / Field expected by existing app logic? (keep internal names stable) -->
+              <div class="hidden">
+                <label class="block text-sm font-semibold text-gray-700 mb-2">AWS Users</label>
+                <input type="number" name="awsUsers" value="0" />
+              </div>
 
-                    <!-- Concurrent Users -->
-                    <div>
-                        <label class="block text-sm font-semibold text-gray-700 mb-2">Concurrent Users: <span id="userLabel">1</span></label>
-                        <input type="range" name="concurrentUsers" id="usersSlider" min="1" max="100" value="1"
-                            class="w-full h-2 bg-gray-300 rounded-lg appearance-none cursor-pointer accent-orange-600">
-                        <div class="flex justify-between text-xs text-gray-500 mt-1">
-                            <span>1 User</span>
-                            <span>100+ Users</span>
-                        </div>
-                    </div>
-
-                    <!-- AWS Cloud Toggle -->
-                    <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
-                        <label class="flex items-center gap-3 cursor-pointer">
-                            <input type="checkbox" name="remoteDeployment" id="awsToggle"
-                                class="w-5 h-5 rounded accent-orange-600 cursor-pointer">
-                            <div>
-                                <div class="font-semibold text-gray-800">Tally on AWS Cloud Hosting</div>
-                                <div class="text-xs text-gray-600">Enable remote access with enterprise cloud infrastructure</div>
-                            </div>
-                        </label>
-                    </div>
-
-                    <!-- Routing Status Badge -->
-                    <div id="routingBadge" class="p-4 rounded-lg bg-blue-100 border-l-4 border-blue-600 text-sm text-gray-800">
-                        <strong>Priority 2 Track:</strong> Routed sequentially to the inside sales rotation desk.
-                    </div>
-
-                    <!-- Submit Button -->
-                    <button type="submit" class="w-full bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 rounded-lg transition transform hover:scale-105">
-                        Submit Inquiry & Get Quote
-                    </button>
-                    <p class="text-xs text-gray-500 text-center mt-2">Your information is secure and will never be shared</p>
-                </form>
-            </div>
-
-            <!-- Right Column: Pricing Output Card -->
-            <div class="bg-gradient-to-br from-blue-900 to-blue-800 text-white rounded-xl shadow-2xl p-8 h-fit">
-                <h3 class="text-2xl font-bold mb-8">Investment Summary</h3>
-                
-                <div class="space-y-6">
-                    <!-- Software Base Price -->
-                    <div class="border-b border-blue-700 pb-6">
-                        <div class="text-sm text-blue-300 mb-2">Software Base Price</div>
-                        <div class="text-3xl font-bold text-orange-400" id="baseAmount">₹22,500</div>
-                        <div class="text-xs text-blue-300 mt-1" id="tierLabel">Tally Prime Silver (Single User)</div>
-                    </div>
-
-                    <!-- Location Multiplier -->
-                    <div id="locationSection" class="border-b border-blue-700 pb-6 hidden">
-                        <div class="flex justify-between items-center">
-                            <span class="text-sm text-blue-300">Location Adjustment (15% per extra location)</span>
-                            <span class="text-lg font-semibold text-orange-300" id="locationMultiplier">×1.00</span>
-                        </div>
-                    </div>
-
-                    <!-- Concurrent Users Multiplier -->
-                    <div id="userSection" class="border-b border-blue-700 pb-6 hidden">
-                        <div class="flex justify-between items-center">
-                            <span class="text-sm text-blue-300">Concurrent Users (5% per user >10)</span>
-                            <span class="text-lg font-semibold text-orange-300" id="userMultiplier">×1.00</span>
-                        </div>
-                    </div>
-
-                    <!-- AWS Cloud Cost -->
-                    <div id="awsSection" class="border-b border-blue-700 pb-6 hidden">
-                        <div class="flex justify-between items-center mb-2">
-                            <span class="text-sm text-blue-300">AWS Cloud Hosting</span>
-                            <span class="text-lg font-semibold text-green-400" id="awsCost">₹0</span>
-                        </div>
-                        <div class="text-xs text-blue-400">₹600/user/month (annualized)</div>
-                    </div>
-
-                    <!-- Subtotal -->
-                    <div class="border-b border-blue-700 pb-6">
-                        <div class="flex justify-between items-center">
-                            <span class="text-sm text-blue-300">Subtotal (Before GST)</span>
-                            <span class="text-xl font-bold text-white" id="subtotal">₹22,500</span>
-                        </div>
-                    </div>
-
-                    <!-- GST Line Item -->
-                    <div class="border-b border-blue-700 pb-6">
-                        <div class="flex justify-between items-center">
-                            <span class="text-sm text-blue-300">GST @ 18%</span>
-                            <span class="text-xl font-bold text-yellow-300" id="gstAmount">₹4,050</span>
-                        </div>
-                    </div>
-
-                    <!-- Total Investment -->
-                    <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-6 border border-orange-400 border-opacity-50">
-                        <div class="text-sm text-blue-300 mb-2">TOTAL INVESTMENT</div>
-                        <div class="text-4xl font-bold text-orange-400 mb-3" id="totalAmount">₹26,550</div>
-                        <div class="text-xs text-blue-200">All prices in Indian Rupees (INR)</div>
-                    </div>
+              <!-- Locations -->
+              <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-2">Number of Locations: <span id="locLabel">1</span></label>
+                <input type="range" name="locations" id="locationsSlider" min="1" max="50" value="1"
+                  class="w-full h-2 bg-gray-300 rounded-lg appearance-none cursor-pointer accent-orange-600" />
+                <div class="flex justify-between text-xs text-gray-500 mt-1">
+                  <span>1 Location</span>
+                  <span>50+ Locations</span>
                 </div>
+              </div>
 
-                <!-- Form Response Output -->
-                <div id="quoteOutput" class="mt-8 p-4 bg-white bg-opacity-10 rounded-lg text-blue-100 min-h-20 hidden"></div>
+              <!-- Concurrent Users -->
+              <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-2">Concurrent Users: <span id="userLabel">1</span></label>
+                <input type="range" name="concurrentUsers" id="usersSlider" min="1" max="100" value="1"
+                  class="w-full h-2 bg-gray-300 rounded-lg appearance-none cursor-pointer accent-orange-600" />
+                <div class="flex justify-between text-xs text-gray-500 mt-1">
+                  <span>1 User</span>
+                  <span>100+ Users</span>
+                </div>
+              </div>
+
+              <!-- AWS Cloud Toggle -->
+              <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                <label class="flex items-center gap-3 cursor-pointer">
+                  <input type="checkbox" name="remoteDeployment" id="awsToggle"
+                    class="w-5 h-5 rounded accent-orange-600 cursor-pointer" />
+                  <div>
+                    <div class="font-semibold text-gray-800">Tally on AWS Cloud Hosting</div>
+                    <div class="text-xs text-gray-600">Enable remote access with enterprise cloud infrastructure</div>
+                  </div>
+                </label>
+              </div>
+
+              <!-- Routing Status Badge -->
+              <div id="routingBadge" class="p-4 rounded-lg bg-blue-100 border-l-4 border-blue-600 text-sm text-gray-800">
+                <strong>Priority 2 Track:</strong> Routed sequentially to the inside sales rotation desk.
+              </div>
+
+              <!-- Submit Button -->
+              <button type="submit" class="w-full bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 rounded-lg transition transform hover:scale-105">
+                Submit Inquiry & Get Quote
+              </button>
+              <p class="text-xs text-gray-500 text-center mt-2">Your information is secure and will never be shared</p>
+            </form>
+          </div>
+
+          <!-- Right Column: Pricing Output Card -->
+          <div class="bg-gradient-to-br from-blue-900 to-blue-800 text-white rounded-xl shadow-2xl p-8 h-fit">
+            <h3 class="text-2xl font-bold mb-8">Investment Summary</h3>
+
+            <div class="space-y-6">
+              <!-- Software Base Price -->
+              <div class="border-b border-blue-700 pb-6">
+                <div class="text-sm text-blue-300 mb-2">Software Base Price</div>
+                <div class="text-3xl font-bold text-orange-400" id="baseAmount">₹22,500</div>
+                <div class="text-xs text-blue-300 mt-1" id="tierLabel">Tally Prime Silver (Single User)</div>
+              </div>
+
+              <!-- Location Multiplier -->
+              <div id="locationSection" class="border-b border-blue-700 pb-6 hidden">
+                <div class="flex justify-between items-center">
+                  <span class="text-sm text-blue-300">Location Adjustment (15% per extra location)</span>
+                  <span class="text-lg font-semibold text-orange-300" id="locationMultiplier">×1.00</span>
+                </div>
+              </div>
+
+              <!-- Concurrent Users Multiplier -->
+              <div id="userSection" class="border-b border-blue-700 pb-6 hidden">
+                <div class="flex justify-between items-center">
+                  <span class="text-sm text-blue-300">Concurrent Users (5% per user >10)</span>
+                  <span class="text-lg font-semibold text-orange-300" id="userMultiplier">×1.00</span>
+                </div>
+              </div>
+
+              <!-- AWS Cloud Cost -->
+              <div id="awsSection" class="border-b border-blue-700 pb-6 hidden">
+                <div class="flex justify-between items-center mb-2">
+                  <span class="text-sm text-blue-300">AWS Cloud Hosting</span>
+                  <span class="text-lg font-semibold text-green-400" id="awsCost">₹0</span>
+                </div>
+                <div class="text-xs text-blue-400">₹600/user/month (annualized)</div>
+              </div>
+
+              <!-- Subtotal -->
+              <div class="border-b border-blue-700 pb-6">
+                <div class="flex justify-between items-center">
+                  <span class="text-sm text-blue-300">Subtotal (Before GST)</span>
+                  <span class="text-xl font-bold text-white" id="subtotal">₹22,500</span>
+                </div>
+              </div>
+
+              <!-- GST Line Item -->
+              <div class="border-b border-blue-700 pb-6">
+                <div class="flex justify-between items-center">
+                  <span class="text-sm text-blue-300">GST @ 18%</span>
+                  <span class="text-xl font-bold text-yellow-300" id="gstAmount">₹4,050</span>
+                </div>
+              </div>
+
+              <!-- Total Investment -->
+              <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-6 border border-orange-400 border-opacity-50">
+                <div class="text-sm text-blue-300 mb-2">TOTAL INVESTMENT</div>
+                <div class="text-4xl font-bold text-orange-400 mb-3" id="totalAmount">₹26,550</div>
+                <div class="text-xs text-blue-200">All prices in Indian Rupees (INR)</div>
+              </div>
             </div>
-        </div>
-    </div>
-</section>
 
-<!-- ============================================
-     G. FREE RESOURCES INBOUND CORRIDOR
-     ============================================ -->
-<section id="resources" class="bg-gradient-to-r from-orange-600 to-orange-700 text-white py-12">
-    <div class="max-w-7xl mx-auto px-4 text-center">
-        <h2 class="text-4xl font-bold mb-4">Free Lead Magnets & Resources</h2>
+            <!-- Form Response Output -->
+            <div id="quoteOutput" class="mt-8 p-4 bg-white bg-opacity-10 rounded-lg text-blue-100 min-h-20 hidden"></div>
+          </div>
+        </div>
+
+        <div class="mt-8 text-center text-sm text-gray-600">
+          Tip: For multi-user environments, prefer TallyPrime Server to avoid performance lag and reduce data corruption risk.
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         H. FAQ ACCORDION (semantic details/summary)
+         ============================================ -->
+    <section id="faq" class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4">
+        <header class="text-center mb-10">
+          <h2 class="text-3xl md:text-4xl font-bold text-blue-900">FAQ—TallyPrime Editions, Server Security, Cloud Backups, Biz Analyst Sync & Otu HRMS</h2>
+          <p class="text-gray-600 text-lg mt-3">Clear answers built for high-intent searchers looking to buy Tally solutions with confidence.</p>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6">
+            <details class="group">
+              <summary class="cursor-pointer font-bold text-blue-900">What is the difference between TallyPrime Silver and Gold editions?</summary>
+              <p class="mt-3 text-sm text-gray-700">
+                TallyPrime Silver is designed for single-user deployments and streamlined accounting workflows.
+                TallyPrime Gold supports multi-user concurrent usage patterns and typically suits teams that collaborate on accounts and inventory across shared environments.
+              </p>
+            </details>
+          </div>
+
+          <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6">
+            <details class="group">
+              <summary class="cursor-pointer font-bold text-blue-900">How does TallyPrime Server protect data from corruption compared to standard shared folders?</summary>
+              <p class="mt-3 text-sm text-gray-700">
+                TallyPrime Server is deployed with enterprise-grade concurrency and controlled access.
+                It avoids common corruption risks that arise when multiple clients write through direct file sharing paths.
+                The server model coordinates synchronization so multi-user activity stays consistent.
+              </p>
+            </details>
+          </div>
+
+          <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6">
+            <details class="group">
+              <summary class="cursor-pointer font-bold text-blue-900">Is my data secure when using Tally on Cloud, and who manages backups?</summary>
+              <p class="mt-3 text-sm text-gray-700">
+                Tally on Cloud runs on robust infrastructure with automated backup workflows.
+                Backup operations are managed by the cloud deployment architecture used for your instance, improving recoverability compared to unmanaged local backups.
+              </p>
+            </details>
+          </div>
+
+          <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6">
+            <details class="group">
+              <summary class="cursor-pointer font-bold text-blue-900">How often does Biz Analyst sync data from my local desktop to my mobile device?</summary>
+              <p class="mt-3 text-sm text-gray-700">
+                Sync behavior depends on your integration workflow and synchronization configuration.
+                In typical partner-enabled deployments, Biz Analyst is designed for regular near-real-time updates so mobile dashboards remain current while maintaining secure access.
+              </p>
+            </details>
+          </div>
+
+          <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6 lg:col-span-2">
+            <details class="group">
+              <summary class="cursor-pointer font-bold text-blue-900">Can Otu HRMS handle custom salary structures and complex industrial attendance shifts?</summary>
+              <p class="mt-3 text-sm text-gray-700">
+                Otu HRMS supports automated payroll processing and configurable rules for statutory compliances.
+                It is built to manage attendance/leave with shift logic, enabling complex industrial attendance requirements while aligning payroll outputs with accounting systems.
+              </p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         I. FREE RESOURCES
+         ============================================ -->
+    <section id="resources" class="bg-gradient-to-r from-orange-600 to-orange-700 text-white py-12">
+      <div class="max-w-7xl mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Free Lead Magnets & Deployment Resources</h2>
         <p class="text-lg text-orange-100 mb-8 max-w-2xl mx-auto">
-            Download our comprehensive collection of 10 Free Custom Manufacturing & Retail TDL Customization Packages to streamline your billing interfaces and accelerate reporting workflows.
+          Download implementation-ready TDL assets and readiness checklists for manufacturing, retail, and cloud-first finance teams.
+          Use these to accelerate rollout workflows and reduce manual effort.
         </p>
-        <div class="inline-block bg-white text-orange-700 px-8 py-4 rounded-lg font-bold text-lg hover:bg-orange-50 transition cursor-pointer">
-            📥 Access Free TDL Templates
-        </div>
-        <p class="text-orange-100 text-sm mt-6">No credit card required • Immediate delivery • Enterprise-quality templates</p>
-    </div>
-</section>
+        <a href="#calculator" class="inline-block bg-white text-orange-700 px-8 py-4 rounded-lg font-bold text-lg hover:bg-orange-50 transition cursor-pointer">
+          📥 Request Free TDL Templates
+        </a>
+        <p class="text-orange-100 text-sm mt-6">No credit card required • Quick delivery • Partner-grade templates & guides</p>
+      </div>
+    </section>
 
-<!-- ============================================
-     H. VERIFIED BUSINESS CARD FOOTER HUB
-     ============================================ -->
-<footer id="contact" class="bg-blue-900 text-white py-12">
-    <div class="max-w-7xl mx-auto px-4">
+    <!-- ============================================
+         J. FOOTER / CONTACT
+         ============================================ -->
+    <footer id="contact" class="bg-blue-900 text-white py-12">
+      <div class="max-w-7xl mx-auto px-4">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-            <!-- Contact Info Block -->
-            <div>
-                <h3 class="text-lg font-bold mb-4 text-orange-400">Authorized Representative</h3>
-                <p class="font-semibold mb-4">Bhaskar D. Gurav</p>
-                <p class="text-sm text-blue-100">Tally Certified Partner</p>
-                <p class="text-sm text-blue-100">AWS Cloud Solutions</p>
-            </div>
+          <div>
+            <h3 class="text-lg font-bold mb-4 text-orange-400">Authorized Representative</h3>
+            <p class="font-semibold mb-4">Bhaskar D. Gurav</p>
+            <p class="text-sm text-blue-100">Tally Certified Partner</p>
+            <p class="text-sm text-blue-100">AWS Cloud Solutions</p>
+          </div>
 
-            <!-- Direct Support -->
-            <div>
-                <h3 class="text-lg font-bold mb-4 text-orange-400">Direct Support Lines</h3>
-                <div class="space-y-2">
-                    <a href="tel:+919595228639" class="block hover:text-orange-400 transition font-semibold">
-                        📞 +91 9595228639
-                    </a>
-                    <a href="tel:+917304080666" class="block hover:text-orange-400 transition font-semibold">
-                        📞 +91 7304080666
-                    </a>
-                    <p class="text-xs text-blue-300 mt-3">Available Monday - Saturday, 10 AM - 6 PM IST</p>
-                </div>
+          <div>
+            <h3 class="text-lg font-bold mb-4 text-orange-400">Direct Support Lines</h3>
+            <div class="space-y-2">
+              <a href="tel:+919595228639" class="block hover:text-orange-400 transition font-semibold">📞 +91 9595228639</a>
+              <a href="tel:+917304080666" class="block hover:text-orange-400 transition font-semibold">📞 +91 7304080666</a>
+              <p class="text-xs text-blue-300 mt-3">Available Monday - Saturday, 10 AM - 6 PM IST</p>
             </div>
+          </div>
 
-            <!-- Email Communications -->
-            <div>
-                <h3 class="text-lg font-bold mb-4 text-orange-400">Corporate Communications</h3>
-                <div class="space-y-2">
-                    <a href="mailto:leelaenterprises999@gmail.com" class="block hover:text-orange-400 transition text-sm break-all">
-                        leelaenterprises999@gmail.com
-                    </a>
-                    <a href="mailto:gspsolutions999@gmail.com" class="block hover:text-orange-400 transition text-sm break-all">
-                        gspsolutions999@gmail.com
-                    </a>
-                </div>
+          <div>
+            <h3 class="text-lg font-bold mb-4 text-orange-400">Corporate Communications</h3>
+            <div class="space-y-2">
+              <a href="mailto:leelaenterprises999@gmail.com" class="block hover:text-orange-400 transition text-sm break-all">leelaenterprises999@gmail.com</a>
+              <a href="mailto:gspsolutions999@gmail.com" class="block hover:text-orange-400 transition text-sm break-all">gspsolutions999@gmail.com</a>
             </div>
+          </div>
 
-            <!-- Office Locations -->
-            <div>
-                <h3 class="text-lg font-bold mb-4 text-orange-400">Physical Offices</h3>
-                <div class="space-y-4 text-sm">
-                    <div>
-                        <p class="font-semibold mb-1">🏢 Branch Office</p>
-                        <p class="text-blue-100">2nd Floor, Abbas Chamber,<br>Opp. Hotel Aurora Tower,<br>MG Road, Camp,<br>Pune - 411001</p>
-                    </div>
-                </div>
+          <div>
+            <h3 class="text-lg font-bold mb-4 text-orange-400">Physical Offices</h3>
+            <div class="space-y-4 text-sm">
+              <div>
+                <p class="font-semibold mb-1">🏢 Branch Office</p>
+                <p class="text-blue-100">2nd Floor, Abbas Chamber,<br>Opp. Hotel Aurora Tower,<br>MG Road, Camp,<br>Pune - 411001</p>
+              </div>
             </div>
+          </div>
         </div>
 
-        <!-- Map Container -->
         <div class="mb-8 rounded-lg overflow-hidden h-80 bg-gray-800">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.8893050905876!2d73.82631!3d18.52052!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c07cebd00001%3A0x1f00000000000000!2sLeela%20Enterprises%20Pune!5e0!3m2!1sen!2sin!4v1234567890" 
-                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.8893050905876!2d73.82631!3d18.52052!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c07cebd00001%3A0x1f00000000000000!2sLeela%20Enterprises%20Pune!5e0!3m2!1sen!2sin!4v1234567890"
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
         </div>
 
-        <!-- Legal Footer -->
         <div class="border-t border-blue-700 pt-8">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-sm text-blue-300">
-                    © 2024 Leela Enterprises. All Rights Reserved. | Authorized Tally Prime Partner | GST Registered
-                </p>
-                <div class="flex gap-4 text-sm">
-                    <a href="#" class="text-blue-300 hover:text-orange-400 transition">Privacy Policy</a>
-                    <a href="#" class="text-blue-300 hover:text-orange-400 transition">Terms of Service</a>
-                    <a href="#" class="text-blue-300 hover:text-orange-400 transition">Sitemap</a>
-                </div>
+          <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-sm text-blue-300">© 2026 Leela Enterprises. All Rights Reserved. | Authorized TallyPrime Partner | GST Registered</p>
+            <div class="flex gap-4 text-sm">
+              <a href="#" class="text-blue-300 hover:text-orange-400 transition">Privacy Policy</a>
+              <a href="#" class="text-blue-300 hover:text-orange-400 transition">Terms of Service</a>
+              <a href="#" class="text-blue-300 hover:text-orange-400 transition">Sitemap</a>
             </div>
+          </div>
         </div>
-    </div>
-</footer>
+      </div>
+    </footer>
+  </main>
 
-<!-- Scripts -->
-<script src="app.js"></script>
-<script>
-  document.getElementById('pricingForm').addEventListener('submit', function(event) {
-    // 1. Stop the page from reloading
-    event.preventDefault(); 
-    
-    // 2. Gather all the data from the fields automatically
-    const formData = new FormData(event.target);
-    const data = Object.fromEntries(formData.entries());
+  <!-- Scripts -->
+  <script src="app.js"></script>
 
-    // 3. Send the data silently to Zapier
-    fetch('https://hooks.zapier.com/hooks/catch/28126363/42vz9cz/', {
-      method: 'POST',
-      body: JSON.stringify(data)
-    })
-    .then(response => {
-      // 4. Show a success message and clear the form
-      alert("Thank you! Your request has been sent to our sales team.");
-      event.target.reset(); 
-    })
-    .catch(error => {
-      console.error('Error sending data:', error);
-      alert("Oops! Something went wrong.");
-    });
-  });
-</script>
+  <!-- Local UI enhancements (tabs only). Does not touch leadForm automation in public/app.js. -->
+  <script>
+    (function () {
+      const buttons = Array.from(document.querySelectorAll('.tab-btn'));
+      const panels = Array.from(document.querySelectorAll('.tab-panel'));
+      function setTab(key) {
+        panels.forEach(p => {
+          const is = p.getAttribute('data-panel') === key;
+          p.classList.toggle('hidden', !is);
+        });
+        buttons.forEach(b => {
+          b.classList.toggle('bg-white', b.getAttribute('data-tab') === key);
+          b.classList.toggle('border-blue-200', b.getAttribute('data-tab') === key);
+        });
+      }
+      buttons.forEach(btn => {
+        btn.addEventListener('click', () => setTab(btn.getAttribute('data-tab')));
+      });
+    })();
+  </script>
 </body>
 </html>
+
