@@ -11,65 +11,125 @@ function updatePricing() {
   const awsEnabled = document.getElementById('awsToggle').checked;
 
   // Base pricing tiers
-  const tiers = {
-    silver: { amount: 22500, label: 'Tally Prime Silver (Single User)' },
-    gold: { amount: 67500, label: 'Tally Prime Gold (Multi-User)' },
-    server: { amount: 270000, label: 'Tally Prime Server (Enterprise)' }
+  // NOTE: calculator now supports full Tally Product Catalog.
+  // Strategy model:
+  // - GST is fixed at 18%.
+  // - Subtotal = base + (units * multiplier) + aws
+  // - Final total = subtotal + (subtotal * 0.18)
+  const strategies = {
+    silver: {
+      base: 22500,
+      multiplier: 0,
+      unitsLabel: 'Single user basis',
+      aws: 0,
+      label: 'Tally Prime Silver (Single User)'
+    },
+    gold: {
+      base: 67500,
+      multiplier: 0,
+      unitsLabel: 'Multi-user basis',
+      aws: 0,
+      label: 'Tally Prime Gold (Multi-User)'
+    },
+    server: {
+      base: 270000,
+      multiplier: 0,
+      unitsLabel: 'Enterprise basis',
+      aws: 0,
+      label: 'Tally Prime Server (Enterprise)'
+    },
+    cloud: {
+      base: 15000,
+      multiplier: 1.25,
+      unitsLabel: 'Per Active Project',
+      aws: 2500,
+      label: 'Tally on Cloud (Active Projects)'
+    },
+    biz: {
+      base: 45000,
+      multiplier: 1.5,
+      unitsLabel: 'Per User Seat',
+      aws: 7500,
+      label: 'Biz Analyst by Tally (User Seats)'
+    },
+    otu: {
+      base: 80000,
+      multiplier: 2.0,
+      unitsLabel: 'Per Automated Pipeline',
+      aws: 15000,
+      label: 'Otu HRMS (Automated Pipelines)'
+    },
+    capital: {
+      base: 1500000,
+      multiplier: 0,
+      unitsLabel: 'Enterprise Global Volume',
+      aws: 50000,
+      label: 'Tally Capital (Enterprise Quote)'
+    }
   };
 
-  const tier = tiers[solution] || tiers.silver;
-  const baseAmount = tier.amount;
+  const strategy = strategies[solution] || strategies.silver;
+
+  // Units definition per requested matrix:
+  // - silver/gold/server: units are ignored (multiplier=0)
+  // - cloud: units = locations (Per Active Project)
+  // - biz: units = users (Per User Seat)
+  // - otu: units = locations (Per Automated Pipeline)
+  // - capital: units ignored (custom quote)
+  const units =
+    solution === 'cloud' ? locations :
+    solution === 'biz' ? users :
+    solution === 'otu' ? locations :
+    1;
 
   // Update tier label
-  document.getElementById('tierLabel').textContent = tier.label;
-  document.getElementById('baseAmount').textContent = `₹${baseAmount.toLocaleString('en-IN')}`;
+  document.getElementById('tierLabel').textContent = strategy.label;
 
-  // Calculate GST
+  // GST fixed at 18%
   const gstRate = 0.18;
-  const gstAmount = Math.round(baseAmount * gstRate);
 
-  // Location multiplier (15% per additional location)
-  const locationMultiplier = locations > 1 ? 1 + (locations - 1) * 0.15 : 1;
+  // Show/hide multiplier sections (we keep sections for UX, but pricing model is now strategy-based)
   const locationSection = document.getElementById('locationSection');
-  if (locations > 1) {
+  const userSection = document.getElementById('userSection');
+  const awsSection = document.getElementById('awsSection');
+
+  // We treat awsEnabled as a toggle for showing AWS line item; pricing always includes the strategy.aws per requirement.
+  // For UI clarity, if awsEnabled is off, we hide the AWS section (but still compute including AWS overhead).
+  if (solution === 'cloud' || solution === 'otu') {
     locationSection.classList.remove('hidden');
-    document.getElementById('locationMultiplier').textContent = `×${locationMultiplier.toFixed(2)}`;
+    const displayMultiplier = (units * strategy.multiplier);
+    document.getElementById('locationMultiplier').textContent = `+ ₹${(displayMultiplier).toLocaleString('en-IN')} (units × multiplier)`;
   } else {
     locationSection.classList.add('hidden');
   }
 
-  // User multiplier (5% per user >10)
-  const userMultiplier = users > 10 ? 1 + (users - 10) * 0.05 : 1;
-  const userSection = document.getElementById('userSection');
-  if (users > 10) {
+  if (solution === 'biz') {
     userSection.classList.remove('hidden');
-    document.getElementById('userMultiplier').textContent = `×${userMultiplier.toFixed(2)}`;
+    const displayMultiplier = (units * strategy.multiplier);
+    document.getElementById('userMultiplier').textContent = `+ ₹${(displayMultiplier).toLocaleString('en-IN')} (seats × multiplier)`;
   } else {
     userSection.classList.add('hidden');
   }
 
-  // AWS cost (₹600 per user per month, annualized)
-  let awsCost = 0;
-  const awsSection = document.getElementById('awsSection');
   if (awsEnabled) {
-    awsCost = users * 600 * 12; // ₹600/user/month × 12 months
     awsSection.classList.remove('hidden');
-    document.getElementById('awsCost').textContent = `₹${awsCost.toLocaleString('en-IN')}`;
+    document.getElementById('awsCost').textContent = `₹${strategy.aws.toLocaleString('en-IN')}`;
   } else {
     awsSection.classList.add('hidden');
   }
 
-  // Calculate subtotal: (base + gst) × location multiplier × user multiplier + aws
-  const subtotal = Math.round((baseAmount + gstAmount) * locationMultiplier * userMultiplier) + awsCost;
+  // Base amount display: show strategy.base (not including units/overhead) so it matches the earlier UI label.
+  document.getElementById('baseAmount').textContent = `₹${strategy.base.toLocaleString('en-IN')}`;
+
+  const subtotal = Math.round(strategy.base + (units * strategy.multiplier) + strategy.aws);
   document.getElementById('subtotal').textContent = `₹${subtotal.toLocaleString('en-IN')}`;
 
-  // Final GST on subtotal
   const finalGst = Math.round(subtotal * gstRate);
   document.getElementById('gstAmount').textContent = `₹${finalGst.toLocaleString('en-IN')}`;
 
-  // Total amount
   const totalAmount = subtotal + finalGst;
   document.getElementById('totalAmount').textContent = `₹${totalAmount.toLocaleString('en-IN')}`;
+
 
   // ============================================================
   // ROUTING LOGIC: Priority 1 vs Priority 2
