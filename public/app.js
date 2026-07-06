@@ -384,104 +384,87 @@ function isDisposableEmail(email) {
 // ============================================================
 // FORM SUBMISSION HANDLER
 // ============================================================
-form.addEventListener('submit', async (event) => {
-  event.preventDefault();
+if (form) {
+  form.addEventListener('submit', async (event) => {
+    // 1. Instantly halt browser page reload/redirect
+    event.preventDefault();
 
-  const formData = new FormData(form);
-  const payload = Object.fromEntries(formData.entries());
+    const formData = new FormData(form);
+    const rawPayload = Object.fromEntries(formData.entries());
 
-  // Type conversions
-  payload.remoteDeployment = payload.remoteDeployment === 'on';
-  payload.locations = Number(payload.locations || 1);
-  payload.concurrentUsers = Number(payload.concurrentUsers || 1);
-  payload.solutionRequired = payload.solutionRequired || 'silver';
+    // 2. Map payload keys explicitly to match your Supabase column requirements
+    const payload = {
+      fullName: rawPayload.name || rawPayload.fullName || document.getElementById('name')?.value || '',
+      companyName: rawPayload.companyName || rawPayload.company || document.getElementById('companyName')?.value || '',
+      email: rawPayload.email || document.getElementById('email')?.value || '',
+      phoneNumber: rawPayload.phone || rawPayload.phoneNumber || document.getElementById('phone')?.value || '',
+      licenseTier: document.getElementById('solutionSelect')?.value || 'silver',
+      locations: Number(rawPayload.locations || document.getElementById('locationsSlider')?.value || 1),
+      concurrentUsers: Number(rawPayload.concurrentUsers || document.getElementById('usersSlider')?.value || 1),
+      awsEnabled: document.getElementById('awsToggle')?.checked || false,
+      submittedAt: new Date().toISOString()
+    };
 
-  // Display output area
-  output.classList.remove('hidden');
-  output.innerHTML = '<span class="text-orange-300">Processing your inquiry...</span>';
-
-  // Submit to backend API
-  try {
-    const response = await fetch('https://hooks.zapier.com/hooks/catch/28126363/42vz9cz/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload),
-      timeout: 5000 // 5 second timeout
-    });
-
-    const result = await response.json();
-
-    if (result.ok) {
-      // Success response
-      output.innerHTML = `
-    < div class="mb-4" >
-      <strong class="text-green-300">✓ Lead submission successful!</strong>
-        </div >
-    <div class="space-y-2 text-sm">
-      <div>
-        <span class="text-blue-300">Priority:</span>
-        <span class="text-orange-300 font-semibold">${result.route.priority}</span>
-      </div>
-      <div>
-        <span class="text-blue-300">Routing Target:</span>
-        <span class="font-semibold">${result.route.routingTarget}</span>
-      </div>
-      <div>
-        <span class="text-blue-300">Total Investment:</span>
-        <span class="text-green-300 font-bold">₹${result.quote.totalAmount.toLocaleString('en-IN')}</span>
-        <span class="text-xs text-blue-400">(incl. 18% GST)</span>
-      </div>
-      <div class="text-blue-300 text-xs mt-3">
-        Our sales team will contact you within 2 business hours. Your inquiry has been securely recorded.
-      </div>
-    </div>
-  `;
-      output.classList.remove('bg-white', 'bg-opacity-10');
-      output.classList.add('bg-green-900', 'bg-opacity-30', 'border-l-4', 'border-green-400');
-    } else {
-      // Validation error response
-      const errors = result.errors || [];
-      output.innerHTML = `
-    < div class="mb-3" >
-      <strong class="text-red-300">⚠️ Validation errors detected:</strong>
-        </div >
-        <ul class="list-disc list-inside space-y-1 text-sm">
-          ${errors.map(err => `<li>${err}</li>`).join('')}
-        </ul>
-        <div class="text-xs text-blue-300 mt-3">
-          Please review the form and correct the highlighted fields.
-        </div>
-  `;
-      output.classList.remove('bg-white', 'bg-opacity-10');
-      output.classList.add('bg-red-900', 'bg-opacity-30', 'border-l-4', 'border-red-400');
+    // Display output area loading state
+    if (output) {
+      output.classList.remove('hidden');
+      output.innerHTML = '<span class="text-orange-300">Connecting to secure data stream...</span>';
     }
-  } catch (error) {
-    // Network timeout or error - fallback handling
-    console.log('Network error (fallback mode):', error);
 
-    // Store lead locally for offline sync
-    const leadBacklog = JSON.parse(localStorage.getItem('leela_lead_backlog') || '[]');
-    payload.submittedAt = new Date().toISOString();
-    payload.status = 'pending_sync';
-    leadBacklog.push(payload);
-    localStorage.setItem('leela_lead_backlog', JSON.stringify(leadBacklog));
+    // 3. Submit structured JSON packet to Zapier Webhook
+    try {
+      const response = await fetch('https://hooks.zapier.com/hooks/catch/28126363/42vz9cz/', {
+        method: 'POST',
+        headers: { 
+          'Content-Type': 'application/json' 
+        },
+        body: JSON.stringify(payload)
+      });
 
-    // Display user-friendly message
-    output.innerHTML = `
-    < div class="mb-3" >
-      <strong class="text-yellow-300">🔄 System Sync Fallback Mode</strong>
-      </div >
-      <p class="text-sm mb-3">
-        Our servers are experiencing temporary latency. Your inquiry has been safely backed up locally and will sync automatically when connectivity resumes.
-      </p>
-      <div class="text-xs text-blue-300">
-        <strong>Local Backup Confirmation:</strong> Your submission (ID: ${payload.submittedAt}) is stored offline and will retry automatically.
-      </div>
-  `;
-    output.classList.remove('bg-white', 'bg-opacity-10');
-    output.classList.add('bg-yellow-900', 'bg-opacity-30', 'border-l-4', 'border-yellow-400');
-  }
-});
+      // Zapier webhook catch endpoints usually return a status of 200/json directly
+      if (response.ok) {
+        if (output) {
+          output.innerHTML = `
+            <div class="mb-4">
+              <strong class="text-green-300">✓ Pricing Inquiry Synced Successfully!</strong>
+            </div>
+            <div class="space-y-2 text-sm text-blue-200">
+              <p>Your custom configuration has been securely transmitted to our engineering matrix.</p>
+              <p class="text-xs text-blue-400 mt-2">Check your phone shortly if requesting an instant triage agent fallback.</p>
+            </div>
+          `;
+          output.classList.remove('bg-white', 'bg-opacity-10');
+          output.classList.add('bg-green-900', 'bg-opacity-30', 'border-l-4', 'border-green-400');
+        }
+      } else {
+        throw new Error('Webhook rejected payload structure');
+      }
+    } catch (error) {
+      console.log('Network routing failed, engaging offline local sync fallback:', error);
+
+      // Store lead locally for offline resilience
+      const leadBacklog = JSON.parse(localStorage.getItem('leela_lead_backlog') || '[]');
+      payload.status = 'pending_sync';
+      leadBacklog.push(payload);
+      localStorage.setItem('leela_lead_backlog', JSON.stringify(leadBacklog));
+
+      if (output) {
+        output.innerHTML = `
+          <div class="mb-3">
+            <strong class="text-yellow-300">🔄 System Sync Fallback Mode Engaged</strong>
+          </div>
+          <p class="text-sm mb-3 text-gray-300">
+            Our data node is experiencing temporary latency. Your inquiry configuration has been safely cached locally and will sync auto-actively once full routing integrity clears.
+          </p>
+        `;
+        output.classList.remove('bg-white', 'bg-opacity-10');
+        output.classList.add('bg-yellow-900', 'bg-opacity-30', 'border-l-4', 'border-yellow-400');
+      }
+    }
+  });
+} else {
+  console.log("Form with ID 'leadForm' not detected on this layout. Event listeners bypassed safely.");
+}
 
 // ============================================================
 // OPTIONAL: Retry offline leads when connection restored
