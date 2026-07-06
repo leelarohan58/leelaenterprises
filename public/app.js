@@ -402,7 +402,7 @@ form.addEventListener('submit', async (event) => {
 
   // Submit to backend API
   try {
-    const response = await fetch('/api/leads', {
+    const response = await fetch('https://hooks.zapier.com/hooks/catch/28126363/42vz9cz/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload),
@@ -495,8 +495,8 @@ window.addEventListener('online', async () => {
     for (let i = backlog.length - 1; i >= 0; i--) {
       const lead = backlog[i];
       try {
-        const response = await fetch('/api/leads', {
-          method: 'POST',
+        const response = await fetch(" https://hooks.zapier.com/hooks/catch/28126363/42vz9cz/ ", {
+          method: "POST",
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(lead)
         });
